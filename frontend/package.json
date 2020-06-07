@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production"
   },
@@ -33,6 +32,7 @@
     "react-redux": "^7.2.0",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
-    "@types/react-redux": "^7.1.7"
+    "@types/react-redux": "^7.1.7",
+    "axios": "^0.19.2"
   }
 }

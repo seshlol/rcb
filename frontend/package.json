@@ -6,7 +6,7 @@
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production"
   },
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "css-loader": "^3.4.2",
     "sass": "^1.26.2",
@@ -32,6 +32,9 @@
     "react-redux": "^7.2.0",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
-    "@types/react-redux": "^7.1.7"
+    "@types/react-redux": "^7.1.7",
+    "bootstrap": "^4.5.0",
+    "react-bootstrap": "^1.0.1",
+    "mdbreact": "^4.27.0"
   }
 }

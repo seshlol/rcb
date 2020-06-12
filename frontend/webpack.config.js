@@ -20,7 +20,7 @@ module.exports = {
                 },
             },
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.c|(s[ac])ss$/i,
                 use: [
                     'style-loader',
                     'css-loader',
@@ -39,7 +39,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './public/index.html'
+            // favicon: './public/favicon.ico'
         })
     ]
 };

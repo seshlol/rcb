@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
+import {FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class SearchIngredientContainer extends React.Component {
 
@@ -12,9 +13,11 @@ export default class SearchIngredientContainer extends React.Component {
         return (
             <Jumbotron className="logic-block">
                 <InputGroup size="sm">
-                    <FormControl placeholder="Ingredient name"/>
+                    <FormControl placeholder="ingredient name"/>
                     <InputGroup.Append>
-                        <Button variant="primary">Search</Button>
+                        <Button>
+                            <FontAwesomeIcon icon="search"/>
+                        </Button>
                     </InputGroup.Append>
                 </InputGroup>
             </Jumbotron>

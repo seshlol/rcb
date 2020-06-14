@@ -1,11 +1,12 @@
 import './app.scss';
+import '../../fa/fa';
 
 import * as React from 'react';
 
-import SearchIngredientContainer from '../search-ingredient/search-ingredient-container';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import SearchIngredientContainer from '../search-ingredient/search-ingredient-container';
 
 export default class App extends React.Component {
 

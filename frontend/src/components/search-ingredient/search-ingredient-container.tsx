@@ -7,8 +7,9 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 
-import {FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faSearch} from '@fortawesome/free-solid-svg-icons/faSearch';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
 
 export default class SearchIngredientContainer extends React.Component {
 
@@ -19,10 +20,19 @@ export default class SearchIngredientContainer extends React.Component {
                     <FormControl placeholder="ingredient name"/>
                     <InputGroup.Append>
                         <Button>
-                            <FontAwesomeIcon icon={faSearch}/>
+                            <FontAwesomeIcon icon="search"/>
                         </Button>
                     </InputGroup.Append>
                 </InputGroup>
+
+                <Card style={{ height: '18rem' }}>
+                    <ListGroup variant="flush">
+                        <ListGroup.Item>Cras justo odio</ListGroup.Item>
+                        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                    </ListGroup>
+                </Card>
+
             </Jumbotron>
         );
     };

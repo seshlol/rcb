@@ -16,7 +16,7 @@ export default class SearchIngredientContainer extends React.Component {
     render = () => {
         return (
             <Jumbotron className="logic-block">
-                <InputGroup size="sm">
+                <InputGroup>
                     <FormControl placeholder="ingredient name"/>
                     <InputGroup.Append>
                         <Button>
@@ -25,13 +25,21 @@ export default class SearchIngredientContainer extends React.Component {
                     </InputGroup.Append>
                 </InputGroup>
 
-                <Card style={{ height: '18rem' }}>
-                    <ListGroup variant="flush">
-                        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-                    </ListGroup>
-                </Card>
+                <div style={{marginTop: '0.8rem', height: '16rem', overflowY: 'scroll'}}>
+                    <Card>
+                        <ListGroup>
+                            <ListGroup.Item>Cras justo odio</ListGroup.Item>
+                            <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                            <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                            <ListGroup.Item>Cras justo odio</ListGroup.Item>
+                            <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                            <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                            <ListGroup.Item>Cras justo odio</ListGroup.Item>
+                            <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                            <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                        </ListGroup>
+                    </Card>
+                </div>
 
             </Jumbotron>
         );

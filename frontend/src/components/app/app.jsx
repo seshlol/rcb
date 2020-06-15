@@ -1,11 +1,12 @@
 import './app.scss';
-import '../../fa/fa';
+import '../fa/fa';
 
 import * as React from 'react';
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Container from 'react-grid-system/build/grid/Container'
+import Row from 'react-grid-system/build/grid/Row'
+import Col from 'react-grid-system/build/grid/Col'
+
 import SearchIngredientContainer from '../search-ingredient/search-ingredient-container';
 
 export default class App extends React.Component {
@@ -14,14 +15,14 @@ export default class App extends React.Component {
         return (
             <Container fluid>
                 <Row>
-                    <Col xl="4">
-                        <SearchIngredientContainer/>
+                    <Col xl={4}>
+                        text1
                     </Col>
-                    <Col xl="4">
-                        <SearchIngredientContainer/>
+                    <Col xl={4}>
+                        text2
                     </Col>
-                    <Col xl="4">
-                        <SearchIngredientContainer/>
+                    <Col xl={4}>
+                        text3
                     </Col>
                 </Row>
             </Container>

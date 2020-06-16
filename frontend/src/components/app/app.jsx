@@ -13,15 +13,15 @@ export default class App extends React.Component {
 
     render = () => {
         return (
-            <Container style={{padding: '1rem'}} fluid>
-                <Row>
-                    <Col xl={4} style={{padding: 0}}>
+            <Container style={{padding: 0}} fluid>
+                <Row nogutter>
+                    <Col xl={4} nogutter>
                         <SearchIngredientContainer/>
                     </Col>
-                    <Col xl={4} style={{padding: 0}}>
+                    <Col xl={4} nogutter>
                         <SearchIngredientContainer/>
                     </Col>
-                    <Col xl={4} style={{padding: 0}}>
+                    <Col xl={4} nogutter>
                         <SearchIngredientContainer/>
                     </Col>
                 </Row>

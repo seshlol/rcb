@@ -10,13 +10,22 @@ export default class SearchIngredientContainer extends React.Component {
 
     render = () => {
         return (
-            <div className='logic-block'>
+            <div className='search-ingredient-container' onSubmit={this.searchIngredient}>
                 <Row style={{margin: '0.5rem'}}>
-                    <input/>
+                    <form className={'search-ingredient-form'}>
+                        <input className={'search-ingredient-form-input'}/>
+                        <button className={'search-ingredient-form-button'}>
+                            <FontAwesomeIcon icon='search'/>
+                        </button>
+                    </form>
                 </Row>
             </div>
         );
     };
+
+    searchIngredient = (evt) => {
+        evt.preventDefault();
+    }
 }
 
 

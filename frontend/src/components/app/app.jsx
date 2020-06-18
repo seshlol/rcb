@@ -16,13 +16,19 @@ export default class App extends React.Component {
             <Container style={{paddingLeft: '0', paddingRight: '0.5rem'}} fluid>
                 <Row nogutter>
                     <Col xl={4} nogutter>
-                        <SearchIngredientContainer/>
+                        <div className='search-ingredient-container'>
+                            <SearchIngredientContainer/>
+                        </div>
                     </Col>
                     <Col xl={4} nogutter>
-                        <SearchIngredientContainer/>
+                        <div className='search-ingredient-container'>
+                            <SearchIngredientContainer/>
+                        </div>
                     </Col>
                     <Col xl={4} nogutter>
-                        <SearchIngredientContainer/>
+                        <div className='search-ingredient-container'>
+                            <SearchIngredientContainer/>
+                        </div>
                     </Col>
                 </Row>
             </Container>

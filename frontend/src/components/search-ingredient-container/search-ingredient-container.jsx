@@ -13,9 +13,9 @@ export default class SearchIngredientContainer extends React.Component {
             <div>
                 <Row style={{margin: '0.5rem'}}>
                     <form className={'search-ingredient-form'} onSubmit={this.searchIngredient}>
-                        <input className={'search-ingredient-form-input'} placeholder=' ingredient name'/>
+                        <input className={'search-ingredient-form-input'} placeholder={'ingredient name'}/>
                         <button className={'search-ingredient-form-button'}>
-                            <FontAwesomeIcon icon='search'/>
+                            <FontAwesomeIcon className={'search-ingredient-form-button-icon'} icon={'search'}/>
                         </button>
                     </form>
                 </Row>
@@ -25,6 +25,8 @@ export default class SearchIngredientContainer extends React.Component {
 
     searchIngredient = (evt) => {
         evt.preventDefault();
+
+        console.log('search button clicked!');
     }
 }
 

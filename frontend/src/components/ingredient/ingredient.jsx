@@ -7,15 +7,17 @@ export default class Ingredient extends React.Component {
 
     render = () => {
         return (
-            <Row style={{margin: '0.5rem'}}>
-                <img className={'ingredient-image'}>
+            <Row style={{margin: '0.25rem'}}>
+                <div className={'search-ingredient-result-item'}>
+                    <img className={'search-ingredient-result-item-image'}>
 
-                </img>
-                <div className={'ingredient-name'}>
+                    </img>
+                    <div className={'search-ingredient-result-item-name'}>
 
-                </div>
-                <div className={'ingredient-actions'}>
+                    </div>
+                    <div className={'search-ingredient-result-item-actions'}>
 
+                    </div>
                 </div>
             </Row>
         );

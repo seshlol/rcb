@@ -24,6 +24,9 @@ export default class SearchIngredientContainer extends React.Component {
                         <Ingredient/>
                         <Ingredient/>
                         <Ingredient/>
+                        <Ingredient/>
+                        <Ingredient/>
+                        <Ingredient/>
                     </div>
                 </Row>
             </div>

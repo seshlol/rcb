@@ -2,21 +2,23 @@ import './ingredient.scss';
 
 import * as React from 'react';
 import Row from 'react-grid-system/build/grid/Row';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export default class Ingredient extends React.Component {
 
     render = () => {
         return (
-            <Row style={{margin: '0.25rem'}}>
+            <Row style={{margin: '0 0 0.25rem 0'}}>
                 <div className={'search-ingredient-result-item'}>
-                    <img className={'search-ingredient-result-item-image'}>
-
-                    </img>
+                    <div className={'search-ingredient-result-item-logo'}>
+                        {/*<img/>*/}
+                        <FontAwesomeIcon className={'search-ingredient-result-item-logo-icon'} icon={['far', 'image']}/>
+                    </div>
                     <div className={'search-ingredient-result-item-name'}>
 
                     </div>
                     <div className={'search-ingredient-result-item-actions'}>
-
+                        <FontAwesomeIcon className={'search-ingredient-result-item-actions-item'} icon={['far', 'plus-square']}/>
                     </div>
                 </div>
             </Row>

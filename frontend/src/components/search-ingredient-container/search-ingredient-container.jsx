@@ -1,10 +1,10 @@
-import './search-ingredient-container.scss';
-
 import * as React from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Row from 'react-grid-system/build/grid/Row';
-import Ingredient from '../ingredient/ingredient';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
+import Ingredient from '../ingredient/index';
+
+import './search-ingredient-container.scss';
 
 export default class SearchIngredientContainer extends React.Component {
 

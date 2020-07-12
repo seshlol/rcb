@@ -12,10 +12,13 @@ export default class SearchIngredientContainer extends React.Component {
         return (
             <div>
                 <Row style={{margin: '0.5rem'}}>
-                    <form className={'search-ingredient-form'} onSubmit={this.searchIngredients}>
-                        <input className={'search-ingredient-form-input'} placeholder={'ingredient name'}/>
+                    <form className={'search-ingredient-form'}
+                          onSubmit={this.searchIngredients}>
+                        <input className={'search-ingredient-form-input'}
+                               placeholder={'ingredient name'}/>
                         <button className={'search-ingredient-form-button'}>
-                            <FontAwesomeIcon className={'search-ingredient-form-button-icon'} icon={['fas', 'search']}/>
+                            <FontAwesomeIcon className={'search-ingredient-form-button-icon'}
+                                             icon={['fas', 'search']}/>
                         </button>
                     </form>
                 </Row>

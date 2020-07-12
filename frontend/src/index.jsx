@@ -3,4 +3,9 @@ import * as ReactDOM from 'react-dom';
 
 import App from './components/app/index';
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(
+    <Provider>
+        <App/>
+    </Provider>,
+    document.getElementById('root')
+);

@@ -5,8 +5,9 @@ import Col from 'react-grid-system/build/grid/Col';
 
 import SearchIngredientContainer from '../search-ingredient-container/index';
 
-import './app.scss';
 import '../fa-library/fa-library';
+
+import './app.scss';
 
 export default class App extends React.Component {
 

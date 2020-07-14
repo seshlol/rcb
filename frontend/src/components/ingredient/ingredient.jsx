@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Row from 'react-grid-system/build/grid/Row';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-
 import './ingredient.scss';
 
 export default class Ingredient extends React.Component {

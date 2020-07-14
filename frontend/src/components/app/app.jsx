@@ -2,11 +2,8 @@ import * as React from 'react';
 import Container from 'react-grid-system/build/grid/Container';
 import Row from 'react-grid-system/build/grid/Row';
 import Col from 'react-grid-system/build/grid/Col';
-
 import SearchIngredientContainer from '../search-ingredient-container/index';
-
 import '../fa-library/fa-library';
-
 import './app.scss';
 
 export default class App extends React.Component {

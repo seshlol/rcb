@@ -1,9 +1,7 @@
 import * as React from 'react';
 import Row from 'react-grid-system/build/grid/Row';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-
 import Ingredient from '../ingredient/index';
-
 import './search-ingredient-container.scss';
 
 export default class SearchIngredientContainer extends React.Component {

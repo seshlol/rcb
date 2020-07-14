@@ -19,8 +19,8 @@ export default class Ingredient extends React.Component {
                         <div className={'search-ingredient-result-item-info-name'}>
 
                         </div>
-                        <div className={'search-ingredient-result-item-actions'}>
-                            <FontAwesomeIcon className={'search-ingredient-result-item-actions-item'}
+                        <div className={'search-ingredient-result-item-info-actions'}>
+                            <FontAwesomeIcon className={'search-ingredient-result-item-info-actions-item'}
                                              icon={['far', 'plus-square']}/>
                         </div>
                     </div>

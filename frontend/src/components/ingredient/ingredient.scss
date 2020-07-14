@@ -1,6 +1,6 @@
 @import "../../styles/colors";
 
-.search-ingredient-result-item {
+.get-ingredients-result-item {
   display: flex;
   width: 100%;
   height: 4rem;
@@ -8,7 +8,7 @@
   border: 1px solid $color-4
 }
 
-.search-ingredient-result-item-logo {
+.get-ingredients-result-item-logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,22 +17,22 @@
   border-right: 1px solid $color-4;
 }
 
-.search-ingredient-result-item-logo-icon {
+.get-ingredients-result-item-logo-icon {
   font-size: 2.5rem;
   color: $color-5;
 }
 
-.search-ingredient-result-item-info {
+.get-ingredients-result-item-info {
   display: block;
   width: 100%;
 }
 
-.search-ingredient-result-item-info-name {
+.get-ingredients-result-item-info-name {
   width: 100%;
   height: 50%;
 }
 
-.search-ingredient-result-item-info-actions {
+.get-ingredients-result-item-info-actions {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -41,7 +41,7 @@
   padding: 0 0.25rem 0 0.15rem;
 }
 
-.search-ingredient-result-item-info-actions-item {
+.get-ingredients-result-item-info-actions-item {
   margin: 0.25rem 0.25rem 0.25rem 0.25rem;
   font-size: 1.5rem;
   color: #3FBF3F;

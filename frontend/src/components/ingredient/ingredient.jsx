@@ -11,9 +11,14 @@ export default class Ingredient extends React.Component {
             <Row style={{margin: '0 0 0.25rem 0'}}>
                 <div className={'ingredients-result-item'}>
                     <div className={'ingredients-result-item-logo'}>
-                        {/*<img/>*/}
-                        <FontAwesomeIcon className={'ingredients-result-item-logo-icon'}
-                                         icon={['far', 'image']}/>
+                        {
+                            ingredientImageSrc ?
+                                <img className={'ingredients-result-item-logo-img'}
+                                     src={ingredientImageSrc}
+                                     alt={ingredientImageAlt}/>
+                                : <FontAwesomeIcon className={'ingredients-result-item-logo-icon'}
+                                                   icon={['far', 'image']}/>
+                        }
                     </div>
                     <div className={'ingredients-result-item-info'}>
                         <div className={'ingredients-result-item-info-name'}>

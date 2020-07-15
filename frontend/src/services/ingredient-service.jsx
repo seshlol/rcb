@@ -9,7 +9,7 @@ export const serviceGetIngredients = () => {
         {
             id: '7266',
             ingredientImageSrc: "./img/ingredients/chicken-egg.png",
-            ingredientImageAlt: "white chicken egg",
+            ingredientImageAlt: "super white giant chicken egg",
             ingredientName: "Chicken egg"
         },
         {
@@ -20,7 +20,7 @@ export const serviceGetIngredients = () => {
         {
             id: '9387',
             ingredientImageSrc: "./img/ingredients/tomato.png",
-            ingredientImageAlt: "tomato",
+            ingredientImageAlt: "thesuperiest tomato",
             ingredientName: "Tomato"
         },
         {

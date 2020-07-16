@@ -22,7 +22,9 @@ export default class Ingredient extends React.Component {
                     </div>
                     <div className={'ingredients-result-item-info'}>
                         <div className={'ingredients-result-item-info-name'}>
-                            {ingredientName}
+                            {
+                                ingredientName
+                            }
                         </div>
                         <div className={'ingredients-result-item-info-actions'}>
                             <FontAwesomeIcon className={'ingredients-result-item-info-actions-item'}

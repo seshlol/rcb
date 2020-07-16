@@ -40,14 +40,13 @@ class IngredientsContainer extends React.Component {
 
     getIngredients = (evt) => {
         evt.preventDefault();
-        const ingredients = serviceGetIngredients();
-        this.props.getIngredients(ingredients);
+        this.props.getIngredients(serviceGetIngredients());
     }
 }
 
-const mapStateToProps = ({ingredientReducer: {ingredients}}) => {
+const mapStateToProps = (state) => {
     return {
-        ingredients
+        ingredients: state.ingredientReducer.ingredients
     }
 };
 

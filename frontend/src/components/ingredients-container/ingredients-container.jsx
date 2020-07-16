@@ -40,7 +40,8 @@ class IngredientsContainer extends React.Component {
 
     getIngredients = (evt) => {
         evt.preventDefault();
-        this.props.getIngredients(serviceGetIngredients());
+        const ingredients = serviceGetIngredients();
+        this.props.getIngredients(ingredients);
     }
 }
 

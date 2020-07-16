@@ -11,17 +11,17 @@ import {serviceGetIngredients} from '../services/ingredient-service';
 export const getIngredients = (ingredientName) => {
     return dispatch => {
         dispatch(getIngredientsStarted());
-        axios
-            .get(
-                '/',
-                {params: {ingredientName}}
-            )
-            .then(response => {
-                dispatch(getIngredientsSuccess(response.data))
-            })
-            .catch(error => {
-                dispatch(getIngredientsFailure(error.message))
-            });
+        // axios
+        //     .get(
+        //         '/',
+        //         {params: {ingredientName}}
+        //     )
+        //     .then(response => {
+        //         dispatch(getIngredientsSuccess(response.data))
+        //     })
+        //     .catch(error => {
+        //         dispatch(getIngredientsFailure(error.message))
+        //     });
     }
 };
 

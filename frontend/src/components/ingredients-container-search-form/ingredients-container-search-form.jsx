@@ -8,7 +8,7 @@ import './ingredients-container-search-form.scss';
 class IngredientsContainerSearchForm extends React.Component {
 
     state = {
-        ingredientName: ''
+        ingredient: ''
     };
 
     render = () => {
@@ -18,8 +18,8 @@ class IngredientsContainerSearchForm extends React.Component {
                       onSubmit={this.onSubmitHandler}>
                     <input className={'ingredients-form-input'}
                            placeholder={'ingredient name'}
-                           id={'ingredientName'}
-                           value={this.state.ingredientName}
+                           id={'ingredient'}
+                           value={this.state.ingredient}
                            onChange={this.onChangeHandler}/>
                     <button className={'ingredients-form-button'}>
                         <FontAwesomeIcon className={'ingredients-form-button-icon'}
@@ -32,7 +32,8 @@ class IngredientsContainerSearchForm extends React.Component {
 
     onSubmitHandler = (evt) => {
         evt.preventDefault();
-        this.props.getIngredients(this.state.ingredientName);
+        this.props.getIngredients(this.state.ingredient);
+        this.setState({ingredient: ''});
     };
 
     onChangeHandler = (evt) => {

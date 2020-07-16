@@ -7,12 +7,11 @@ import {connect} from "react-redux";
 class IngredientsContainerResultList extends React.Component {
 
     render = () => {
-        const {ingredients} = this.props;
         return (
                 <Row style={{margin: '0.5rem'}}>
                     <div className={'ingredients-result'}>
                         {
-                            ingredients.map(ingredient => {
+                            this.props.ingredients.map(ingredient => {
                                 const {id, ...props} = ingredient;
                                 return <Ingredient key={id} ingredient={props}/>;
                             })

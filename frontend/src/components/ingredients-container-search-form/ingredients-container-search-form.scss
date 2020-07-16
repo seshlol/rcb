@@ -1,0 +1,39 @@
+@import "../../styles/colors";
+
+.ingredients-form {
+  display: flex;
+  width: 100%;
+}
+
+.ingredients-form-input {
+  width: 100%;
+  height: 2rem;
+  padding: 0 0.5rem 0 0.5rem;
+  border: 1px solid $color-3;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.ingredients-form-input:focus{
+  outline: none;
+  box-shadow: 0 0 0 0.10rem $color-3;
+}
+
+.ingredients-form-button {
+  width: 3rem;
+  height: calc(2rem + 2px);
+  margin: 0 0 0 -1px;
+  padding: 0;
+  background-color: $color-3;
+  border: 1px solid $color-3;
+  border-radius: 0 0.25rem 0.25rem 0;
+  cursor: pointer;
+}
+
+.ingredients-form-button:focus {
+  outline: none;
+}
+
+.ingredients-form-button-icon {
+  font-size: 1.25rem;
+  color: $color-1;
+}

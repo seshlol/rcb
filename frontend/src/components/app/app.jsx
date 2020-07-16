@@ -2,7 +2,7 @@ import * as React from 'react';
 import Container from 'react-grid-system/build/grid/Container';
 import Row from 'react-grid-system/build/grid/Row';
 import Col from 'react-grid-system/build/grid/Col';
-import SearchIngredientContainer from '../ingredients-container/index';
+import IngredientContainer from '../ingredients-container/index';
 import '../fa-library/fa-library';
 import './app.scss';
 
@@ -14,17 +14,17 @@ export default class App extends React.Component {
                 <Row nogutter>
                     <Col xl={4} lg={6}>
                         <div className={'ingredients-container'}>
-                            <SearchIngredientContainer/>
+                            <IngredientContainer/>
                         </div>
                     </Col>
                     <Col xl={4} lg={6}>
                         <div className={'ingredients-container'}>
-                            <SearchIngredientContainer/>
+                            <IngredientContainer/>
                         </div>
                     </Col>
                     <Col xl={4} lg={6}>
                         <div className={'ingredients-container'}>
-                            <SearchIngredientContainer/>
+                            <IngredientContainer/>
                         </div>
                     </Col>
                 </Row>

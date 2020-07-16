@@ -1,3 +1,3 @@
-import SearchIngredientContainer from './ingredients-container';
+import IngredientContainer from './ingredients-container';
 
-export default SearchIngredientContainer;
+export default IngredientContainer;

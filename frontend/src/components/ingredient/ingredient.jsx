@@ -17,7 +17,7 @@ export default class Ingredient extends React.Component {
                                      src={ingredientImageSrc}
                                      alt={ingredientImageAlt}/>
                                 : <FontAwesomeIcon className={'ingredients-result-item-logo-icon'}
-                                                   icon={['far', 'image']}/>
+                                                   icon={['fas', 'camera']}/>
                         }
                     </div>
                     <div className={'ingredients-result-item-info'}>

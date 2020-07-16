@@ -1,20 +1,26 @@
 import * as React from 'react';
 import Row from 'react-grid-system/build/grid/Row';
+import {connect} from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {getIngredients} from '../../actions/ingredient-actions';
 import './ingredients-container-search-form.scss';
-import {getIngredients} from "../../actions/ingredient-actions";
-import {connect} from "react-redux";
-import {serviceGetIngredients} from "../../services/ingredient-service";
 
 class IngredientsContainerSearchForm extends React.Component {
+
+    state = {
+        ingredientName: ''
+    };
 
     render = () => {
         return (
             <Row style={{margin: '0.5rem'}}>
                 <form className={'ingredients-form'}
-                      onSubmit={this.getIngredients}>
+                      onSubmit={this.onSubmitHandler}>
                     <input className={'ingredients-form-input'}
-                           placeholder={'ingredient name'}/>
+                           placeholder={'ingredient name'}
+                           id={'ingredientName'}
+                           value={this.state.ingredientName}
+                           onChange={this.onChangeHandler}/>
                     <button className={'ingredients-form-button'}>
                         <FontAwesomeIcon className={'ingredients-form-button-icon'}
                                          icon={['fas', 'search']}/>
@@ -24,10 +30,13 @@ class IngredientsContainerSearchForm extends React.Component {
         );
     };
 
-    getIngredients = (evt) => {
+    onSubmitHandler = (evt) => {
         evt.preventDefault();
-        const ingredients = serviceGetIngredients();
-        this.props.getIngredients(ingredients);
+        this.props.getIngredients(this.state.ingredientName);
+    };
+
+    onChangeHandler = (evt) => {
+        this.setState({[evt.target.id]: evt.target.value})
     }
 }
 

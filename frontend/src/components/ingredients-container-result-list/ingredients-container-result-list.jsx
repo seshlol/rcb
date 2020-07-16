@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Row from 'react-grid-system/build/grid/Row';
+import {connect} from 'react-redux';
 import Ingredient from '../ingredient/index';
 import './ingredients-container-result-list.scss';
-import {connect} from "react-redux";
 
 class IngredientsContainerResultList extends React.Component {
 

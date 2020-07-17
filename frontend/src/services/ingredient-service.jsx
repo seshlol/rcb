@@ -2,38 +2,38 @@ export const serviceGetIngredients = () => {
     return [
         {
             id: '265',
-            ingredientImageSrc: "./img/ingredients/cow-meat.png",
-            ingredientImageAlt: "cow meat",
-            ingredientName: "Wagyu"
+            name: "Wagyu",
+            imgSrc: "./img/ingredients/cow-meat.png",
+            imgAlt: "cow meat"
         },
         {
             id: '7266',
-            ingredientImageSrc: "./img/ingredients/chicken-egg.png",
-            ingredientImageAlt: "super white giant chicken egg",
-            ingredientName: "Chicken egg"
+            name: "Chicken egg",
+            imgSrc: "./img/ingredients/chicken-egg.png",
+            imgAlt: "super white giant chicken egg"
         },
         {
             id: '4887',
-            ingredientImageAlt: "black bread",
-            ingredientName: "Black bread"
+            name: "Black bread",
+            imgAlt: "black bread"
         },
         {
             id: '9387',
-            ingredientImageSrc: "./img/ingredients/tomato.png",
-            ingredientImageAlt: "thesuperiest tomato",
-            ingredientName: "Tomato"
+            name: "Tomato",
+            imgSrc: "./img/ingredients/tomato.png",
+            imgAlt: "thesuperiest tomato"
         },
         {
             id: '112',
-            ingredientImageSrc: "",
-            ingredientImageAlt: "thymeleaf",
-            ingredientName: "Thymeleaf"
+            name: "Thymeleaf",
+            imgSrc: "",
+            imgAlt: "thymeleaf"
         },
         {
             id: '214',
-            ingredientImageSrc: "./img/ingredients/Salmon.png",
-            ingredientImageAlt: "salmon",
-            ingredientName: "Salmon"
+            name: "Salmon",
+            imgSrc: "./img/ingredients/Salmon.png",
+            imgAlt: "salmon"
         }
     ];
 };

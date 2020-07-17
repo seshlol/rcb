@@ -1,7 +1,9 @@
 import {GET_INGREDIENTS_STARTED, GET_INGREDIENTS_SUCCESS, GET_INGREDIENTS_FAILURE, GET_MORE_INGREDIENTS} from "../constants/action-types";
 
 const initialState = {
-    ingredients: []
+    isLoading: false,
+    ingredients: [],
+    error: null
 };
 
 export default (state = initialState, {type, payload}) => {
@@ -10,6 +12,7 @@ export default (state = initialState, {type, payload}) => {
             return {isLoading: true};
         case GET_INGREDIENTS_SUCCESS:
             return {...state, ingredients: payload};
+
         case GET_MORE_INGREDIENTS:
             return {...state, ingredients: state.ingredients.concat(payload)};
         default:

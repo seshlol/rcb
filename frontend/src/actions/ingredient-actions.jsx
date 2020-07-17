@@ -13,8 +13,8 @@ export const getIngredients = (ingredientName) => {
         dispatch(getIngredientsStarted());
         // axios
         //     .get(
-        //         '/',
-        //         {params: {ingredientName}}
+        //         '/ingredients',
+        //         {params: {ingredient}}
         //     )
         //     .then(response => {
         //         dispatch(getIngredientsSuccess(response.data))

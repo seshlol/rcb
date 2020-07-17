@@ -11,27 +11,24 @@ class IngredientsContainerResultList extends React.Component {
             <Row style={{margin: '0.5rem'}}>
                 <div className={'ingredients-result'}>
                     {
-                        this.isLoading()
+                        this.props.isLoading ? <div>Loading...</div> : null
                     }
-                    {
-                        this.props.ingredients.map(ingredient => {
-                            const {id, ...props} = ingredient;
-                            return <Ingredient key={id} ingredient={props}/>;
-                        })
-                    }
+                    {/*{*/}
+                    {/*    this.props.ingredients.map(ingredient => {*/}
+                    {/*        const {id, ...props} = ingredient;*/}
+                    {/*        return <Ingredient key={id} ingredient={props}/>;*/}
+                    {/*    })*/}
+                    {/*}*/}
                 </div>
             </Row>
         );
     };
-
-    isLoading = () => {
-        return this.props.isLoading ? <div>Loading...</div> : null;
-    }
 }
 
 const mapStateToProps = (state) => {
     return {
-        ingredients: state.ingredientReducer.ingredients
+        ingredients: state.ingredientReducer.ingredients,
+        isLoading: state.ingredientReducer.isLoading
     }
 };
 

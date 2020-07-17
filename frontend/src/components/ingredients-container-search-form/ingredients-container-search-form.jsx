@@ -8,19 +8,18 @@ import './ingredients-container-search-form.scss';
 class IngredientsContainerSearchForm extends React.Component {
 
     state = {
-        ingredient: ''
+        ingredientName: ''
     };
 
     render = () => {
         return (
             <Row style={{margin: '0.5rem'}}>
                 <form className={'ingredients-form'}
-                      onSubmit={this.onSubmitHandler}>
+                      onSubmit={this.handleSubmit}>
                     <input className={'ingredients-form-input'}
                            placeholder={'ingredient name'}
-                           id={'ingredient'}
-                           value={this.state.ingredient}
-                           onChange={this.onChangeHandler}/>
+                           value={this.state.ingredientName}
+                           onChange={this.handleChange}/>
                     <button className={'ingredients-form-button'}>
                         <FontAwesomeIcon className={'ingredients-form-button-icon'}
                                          icon={['fas', 'search']}/>
@@ -30,14 +29,14 @@ class IngredientsContainerSearchForm extends React.Component {
         );
     };
 
-    onSubmitHandler = (evt) => {
+    handleSubmit = (evt) => {
         evt.preventDefault();
-        this.props.getIngredients(this.state.ingredient);
-        this.setState({ingredient: ''});
+        this.props.getIngredients(this.state.ingredientName);
+        this.setState({ingredientName: ''});
     };
 
-    onChangeHandler = (evt) => {
-        this.setState({[evt.target.id]: evt.target.value})
+    handleChange = (evt) => {
+        this.setState({ingredientName: evt.target.value})
     }
 }
 

@@ -6,16 +6,16 @@ import './ingredient.scss';
 export default class Ingredient extends React.Component {
 
     render = () => {
-        const {ingredientImageSrc, ingredientImageAlt, ingredientName} = this.props.ingredient;
+        const {imgSrc, imgAlt, name} = this.props.ingredient;
         return (
             <Row style={{margin: '0 0 0.25rem 0'}}>
                 <div className={'ingredients-result-item'}>
                     <div className={'ingredients-result-item-logo'}>
                         {
-                            ingredientImageSrc ?
+                            imgSrc ?
                                 <img className={'ingredients-result-item-logo-img'}
-                                     src={ingredientImageSrc}
-                                     alt={ingredientImageAlt}/>
+                                     src={imgSrc}
+                                     alt={imgAlt}/>
                                 : <FontAwesomeIcon className={'ingredients-result-item-logo-icon'}
                                                    icon={['fas', 'camera']}/>
                         }
@@ -23,7 +23,7 @@ export default class Ingredient extends React.Component {
                     <div className={'ingredients-result-item-info'}>
                         <div className={'ingredients-result-item-info-name'}>
                             {
-                                ingredientName
+                                name
                             }
                         </div>
                         <div className={'ingredients-result-item-info-actions'}>

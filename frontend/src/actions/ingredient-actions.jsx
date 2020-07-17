@@ -1,5 +1,4 @@
 import {
-    GET_INGREDIENTS,
     GET_INGREDIENTS_STARTED,
     GET_INGREDIENTS_SUCCESS,
     GET_INGREDIENTS_FAILURE,
@@ -11,10 +10,20 @@ import {serviceGetIngredients} from '../services/ingredient-service';
 export const getIngredients = (ingredientName) => {
     return dispatch => {
         dispatch(getIngredientsStarted());
+
+        setTimeout(() => {
+            const rand = Math.random();
+            if (rand > 0.5) {
+                dispatch(getIngredientsSuccess(serviceGetIngredients()))
+            } else {
+                dispatch(getIngredientsFailure('internal server error'));
+            }
+        }, 2000);
+
         // axios
         //     .get(
         //         '/ingredients',
-        //         {params: {ingredient}}
+        //         {params: {ingredientName}}
         //     )
         //     .then(response => {
         //         dispatch(getIngredientsSuccess(response.data))
@@ -25,29 +34,29 @@ export const getIngredients = (ingredientName) => {
     }
 };
 
+export const getMoreIngredients = (payload) => {
+    return {
+        type: GET_MORE_INGREDIENTS,
+        payload
+    }
+};
+
 const getIngredientsStarted = () => {
     return {
         type: GET_INGREDIENTS_STARTED
     }
 };
 
-const getIngredientsSuccess = (ingredients) => {
+const getIngredientsSuccess = (payload) => {
     return {
         type: GET_INGREDIENTS_SUCCESS,
-        ingredients
+        payload
     }
 };
 
-const getIngredientsFailure = (error) => {
+const getIngredientsFailure = (payload) => {
     return {
         type: GET_INGREDIENTS_FAILURE,
-        error
-    }
-};
-
-export const getMoreIngredients = (payload) => {
-    return {
-        type: GET_MORE_INGREDIENTS,
         payload
     }
 };

@@ -8,7 +8,7 @@ import axios from '../api/axios';
 import {serviceGetIngredients} from '../services/ingredient-service';
 
 export const getIngredients = (ingredientName) => {
-    return dispatch => {
+    return (dispatch) => {
         dispatch(getIngredientsStarted());
 
         setTimeout(() => {
@@ -16,7 +16,7 @@ export const getIngredients = (ingredientName) => {
             if (rand > 0.5) {
                 dispatch(getIngredientsSuccess(serviceGetIngredients()))
             } else {
-                dispatch(getIngredientsFailure('internal server error'));
+                dispatch(getIngredientsFailure('Internal server error'));
             }
         }, 2000);
 
@@ -25,19 +25,12 @@ export const getIngredients = (ingredientName) => {
         //         '/ingredients',
         //         {params: {ingredientName}}
         //     )
-        //     .then(response => {
+        //     .then((response) => {
         //         dispatch(getIngredientsSuccess(response.data))
         //     })
-        //     .catch(error => {
+        //     .catch((error) => {
         //         dispatch(getIngredientsFailure(error.message))
         //     });
-    }
-};
-
-export const getMoreIngredients = (payload) => {
-    return {
-        type: GET_MORE_INGREDIENTS,
-        payload
     }
 };
 
@@ -57,6 +50,13 @@ const getIngredientsSuccess = (payload) => {
 const getIngredientsFailure = (payload) => {
     return {
         type: GET_INGREDIENTS_FAILURE,
+        payload
+    }
+};
+
+export const getMoreIngredients = (payload) => {
+    return {
+        type: GET_MORE_INGREDIENTS,
         payload
     }
 };

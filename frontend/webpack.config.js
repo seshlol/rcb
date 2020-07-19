@@ -7,11 +7,11 @@ module.exports = {
         path: path.join(__dirname, '/dist'),
         filename: 'index.js'
     },
-    resolve: {
-        extensions: ['.jsx', '.js']
-    },
     devServer: {
         historyApiFallback: true
+    },
+    resolve: {
+        extensions: ['.jsx', '.js']
     },
     module: {
         rules: [

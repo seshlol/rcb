@@ -7,10 +7,9 @@ import './app.scss';
 export default class App extends React.Component {
 
     render = () => {
-        //todo
         return (
             <Switch>
-                <Route path={'/constructor'} component={<DishConstructor/>}/>
+                <Route path={'/constructor'} component={DishConstructor}/>
                 <Redirect to={'/constructor'}/>
             </Switch>
         );

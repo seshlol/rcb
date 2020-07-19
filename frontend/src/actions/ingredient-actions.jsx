@@ -4,8 +4,7 @@ import {
     GET_INGREDIENTS_FAILURE,
     GET_MORE_INGREDIENTS
 } from '../constants/action-types';
-import axios from '../api/axios';
-import {serviceGetIngredients} from '../services/ingredient-service';
+import IngredientService from '../services/ingredient-service';
 
 export const getIngredients = (ingredientName) => {
     return (dispatch) => {
@@ -14,7 +13,7 @@ export const getIngredients = (ingredientName) => {
         setTimeout(() => {
             const rand = Math.random();
             if (rand > 0.5) {
-                dispatch(getIngredientsSuccess(serviceGetIngredients()))
+                dispatch(getIngredientsSuccess(IngredientService.getIngredients(ingredientName)))
             } else {
                 dispatch(getIngredientsFailure('Internal server error'));
             }

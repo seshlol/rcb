@@ -1,3 +1,3 @@
 rootProject.name = "rcb"
 
-include("frontend", "backend")
+include(":frontend", ":backend")

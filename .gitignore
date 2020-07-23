@@ -2,5 +2,6 @@
 .idea
 build
 
+frontend/dist
 frontend/node_modules
 frontend/yarn-error.log

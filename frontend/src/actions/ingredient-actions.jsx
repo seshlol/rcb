@@ -11,7 +11,7 @@ export const getIngredients = (ingredientName) => {
 
         // axios
         //     .get(
-        //         '/ingredients',
+        //         '/constructor/ingredients',
         //         {params: {ingredientName}}
         //     )
         //     .then((response) => {

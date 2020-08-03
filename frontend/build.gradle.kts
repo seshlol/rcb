@@ -5,7 +5,7 @@ plugins {
 }
 
 tasks {
-
+    
     task<YarnTask>("build") {
         args = listOf("run", "build")
     }

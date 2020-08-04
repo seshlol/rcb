@@ -2,7 +2,7 @@ import * as React from 'react';
 import Container from 'react-grid-system/build/grid/Container';
 import Row from 'react-grid-system/build/grid/Row';
 import Col from 'react-grid-system/build/grid/Col';
-import IngredientContainer from "../ingredients-container";
+import IngredientContainer from '../ingredients-container';
 import './dish-constructor.scss';
 
 export default class DishConstructor extends React.Component {

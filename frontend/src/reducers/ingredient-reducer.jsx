@@ -3,7 +3,7 @@ import {
     GET_INGREDIENTS_SUCCESS,
     GET_INGREDIENTS_FAILURE,
     GET_MORE_INGREDIENTS
-} from "../constants/action-types";
+} from '../constants/action-types';
 
 const initialState = {
     isLoading: false,

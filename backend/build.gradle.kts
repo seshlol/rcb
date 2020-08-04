@@ -30,3 +30,9 @@ tasks.withType<KotlinCompile> {
         jvmTarget = "1.8"
     }
 }
+
+allOpen {
+    annotation("javax.persistence.Entity")
+    annotation("javax.persistence.MappedSuperclass")
+    annotation("javax.persistence.Embeddable")
+}

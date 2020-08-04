@@ -7,6 +7,7 @@ plugins {
 tasks {
     
     task<YarnTask>("build") {
+        dependsOn("yarn_install")
         args = listOf("run", "build")
     }
 

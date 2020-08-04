@@ -37,6 +37,7 @@ export default (state = initialState, {type, payload}) => {
 
         case GET_MORE_INGREDIENTS:
             return {...state, ingredients: state.ingredients.concat(payload)};
+
         default:
             return state;
     }

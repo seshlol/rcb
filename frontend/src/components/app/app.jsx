@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
-import DishConstructor from '../dish-constructor';
+import Constructor from '../constructor';
 import '../fa-library/fa-library';
 import './app.scss';
 
@@ -9,7 +9,7 @@ export default class App extends React.Component {
     render = () => {
         return (
             <Switch>
-                <Route path={'/constructor'} component={DishConstructor}/>
+                <Route path={'/constructor'} component={Constructor}/>
                 <Redirect to={'/constructor'}/>
             </Switch>
         );

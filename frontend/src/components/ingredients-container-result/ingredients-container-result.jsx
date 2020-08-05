@@ -3,9 +3,9 @@ import Row from 'react-grid-system/build/grid/Row';
 import {connect} from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Ingredient from '../ingredient/index';
-import './ingredients-container-result-list.scss';
+import './ingredients-container-result.scss';
 
-class IngredientsContainerResultList extends React.Component {
+class IngredientsContainerResult extends React.Component {
 
     render = () => {
         const {isLoading, ingredients, errorMessage} = this.props;
@@ -54,4 +54,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps)(IngredientsContainerResultList);
+export default connect(mapStateToProps)(IngredientsContainerResult);

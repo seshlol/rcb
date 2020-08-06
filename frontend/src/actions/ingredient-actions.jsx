@@ -1,3 +1,4 @@
+import axios from '../api/axios'
 import {
     GET_INGREDIENTS_STARTED,
     GET_INGREDIENTS_SUCCESS,
@@ -5,21 +6,23 @@ import {
     GET_MORE_INGREDIENTS
 } from '../constants/action-types';
 
-export const getIngredients = (ingredientName) => {
+export const getIngredients = (name, page = 0) => {
     return (dispatch) => {
         dispatch(getIngredientsStarted());
 
-        // axios
-        //     .get(
-        //         '/constructor/ingredients',
-        //         {params: {ingredientName}}
-        //     )
-        //     .then((response) => {
-        //         dispatch(getIngredientsSuccess(response.data))
-        //     })
-        //     .catch((error) => {
-        //         dispatch(getIngredientsFailure(error.message))
-        //     });
+        axios
+            .get(
+                '/constructor/ingredients',
+                {
+                    params: {name, page}
+                }
+            )
+            .then((response) => {
+                dispatch(getIngredientsSuccess(response.data))
+            })
+            .catch((error) => {
+                dispatch(getIngredientsFailure(error.message))
+            });
 
         setTimeout(() => {
             const rand = Math.random();

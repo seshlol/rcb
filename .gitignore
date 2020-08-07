@@ -2,6 +2,10 @@
 .idea
 build
 
+backend/src/main/resources/templates/*
+backend/src/main/resources/static/*
+
 frontend/dist
 frontend/node_modules
 frontend/yarn-error.log
+frontend/*.lock

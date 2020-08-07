@@ -1,10 +1,11 @@
 package io.josm.rcb.entities
 
+import org.springframework.data.annotation.CreatedDate
+import org.springframework.data.annotation.LastModifiedDate
 import org.springframework.data.util.ProxyUtils
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.MappedSuperclass
+import java.time.LocalDateTime
+import javax.persistence.*
+
 
 @MappedSuperclass
 abstract class BaseEntity<T> {
@@ -12,6 +13,14 @@ abstract class BaseEntity<T> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: T? = null
+
+    @CreatedDate
+    @Column(nullable = false, updatable = false)
+    lateinit var created: LocalDateTime
+
+    @LastModifiedDate
+    @Column(nullable = false)
+    lateinit var updated: LocalDateTime
 
     override fun equals(other: Any?): Boolean {
         other ?: return false
@@ -24,6 +33,12 @@ abstract class BaseEntity<T> {
     override fun hashCode() = 31
 
     override fun toString(): String {
-        return "${this.javaClass.simpleName}(id = $id)"
+        return "BaseEntity(id=$id, created=$created, updated=$updated)"
     }
+
+//    override fun toString(): String {
+//        return "${this.javaClass.simpleName}(id = $id)"
+//    }
+
+
 }

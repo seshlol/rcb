@@ -18,9 +18,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf:2.3.1.RELEASE")
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.3.72")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.72")
+    implementation("javax.validation:validation-api:2.0.1.Final")
 
     runtimeOnly("com.h2database:h2:1.4.200")
-    runtimeOnly("org.springframework.boot:spring-boot-devtools:2.3.1.RELEASE")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.3.72")
 }
@@ -30,4 +30,10 @@ tasks.withType<KotlinCompile> {
         freeCompilerArgs = listOf("-Xjsr305=strict")
         jvmTarget = "1.8"
     }
+}
+
+allOpen {
+    annotation("javax.persistence.Entity")
+    annotation("javax.persistence.MappedSuperclass")
+    annotation("javax.persistence.Embeddable")
 }

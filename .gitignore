@@ -8,4 +8,4 @@ backend/src/main/resources/static/*
 frontend/dist
 frontend/node_modules
 frontend/yarn-error.log
-#frontend/*.lock
+frontend/*.lock

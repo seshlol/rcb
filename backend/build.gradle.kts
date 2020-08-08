@@ -25,6 +25,12 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.3.72")
 }
 
+dependencyManagement {
+    imports {
+        mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+    }
+}
+
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
@@ -37,3 +43,4 @@ allOpen {
     annotation("javax.persistence.MappedSuperclass")
     annotation("javax.persistence.Embeddable")
 }
+

@@ -1,5 +1,6 @@
 package io.josm.rcb.services
 
+import io.josm.rcb.dto.IngredientRequestDto
 import io.josm.rcb.entities.IngredientEntity
 import io.josm.rcb.repositories.IngredientRepository
 import org.springframework.data.domain.PageRequest
@@ -13,27 +14,21 @@ import java.util.stream.Collectors
 @Service
 class IngredientService(private val ingredientRepository: IngredientRepository) {
 
-    fun getIngredients(
-            name: String,
-            page: Int
-    ): List<IngredientEntity> {
+    fun getIngredients(ingredientRequestDto: IngredientRequestDto): List<IngredientEntity> {
         val pageable: Pageable = PageRequest.of(
-                page,
+                ingredientRequestDto.page,
                 INGREDIENTS_PER_PAGE,
-                Sort.by(
-                        Order.desc("priority")
-                )
+                Sort.by(Order.desc("priority"))
         )
-        val ingredients = ingredientRepository.findByNameContainingIgnoreCase(
-                name,
+        val ingredientsPage = ingredientRepository.findByNameContainingIgnoreCase(
+                ingredientRequestDto.name,
                 pageable
         )
-                .get()
-                .collect(Collectors.toList())
 
         //todo throw ex if ingredients.isEmpty
 
-        return ingredients
+        return ingredientsPage.get()
+                .collect(Collectors.toList())
     }
 
     companion object {

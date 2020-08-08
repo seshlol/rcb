@@ -3,9 +3,9 @@ import Row from 'react-grid-system/build/grid/Row';
 import {connect} from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {getIngredients} from '../../actions/ingredient-actions';
-import './ingredients-container-search.scss';
+import './ingredient-container-search.scss';
 
-class IngredientsContainerSearch extends React.Component {
+class IngredientContainerSearch extends React.Component {
 
     state = {
         name: ''
@@ -14,14 +14,14 @@ class IngredientsContainerSearch extends React.Component {
     render = () => {
         return (
             <Row style={{margin: '0.5rem'}}>
-                <form className={'ingredients-form'}
+                <form className={'ingredient-container-search'}
                       onSubmit={this.handleSubmit}>
-                    <input className={'ingredients-form-input'}
+                    <input className={'ingredient-container-search-input'}
                            placeholder={'ingredient name'}
                            value={this.state.name}
                            onChange={this.handleChange}/>
-                    <button className={'ingredients-form-button'}>
-                        <FontAwesomeIcon className={'ingredients-form-button-icon'}
+                    <button className={'ingredient-container-search-button'}>
+                        <FontAwesomeIcon className={'ingredient-container-search-button-icon'}
                                          icon={['fas', 'search']}/>
                     </button>
                 </form>
@@ -46,4 +46,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(null, mapDispatchToProps)(IngredientsContainerSearch);
+export default connect(null, mapDispatchToProps)(IngredientContainerSearch);

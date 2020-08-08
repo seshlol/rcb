@@ -3,15 +3,15 @@ import Row from 'react-grid-system/build/grid/Row';
 import {connect} from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Ingredient from '../ingredient/index';
-import './ingredients-container-result.scss';
+import './ingredient-container-result.scss';
 
-class IngredientsContainerResult extends React.Component {
+class IngredientContainerResult extends React.Component {
 
     render = () => {
         const {isLoading, ingredients, errorMessage} = this.props;
         return (
             <Row style={{margin: '0.5rem'}}>
-                <div className={'ingredients-result'}>
+                <div className={'ingredient-container-result'}>
                     {this.renderLoading(isLoading)}
                     {this.renderIngredients(ingredients)}
                     {this.renderError(errorMessage)}
@@ -22,8 +22,8 @@ class IngredientsContainerResult extends React.Component {
 
     renderLoading = (isLoading) => {
         return isLoading ?
-            <div className={'ingredient-result-nocontent'}>
-                <FontAwesomeIcon className={'ingredient-result-nocontent-loading'}
+            <div className={'ingredient-container-result-nocontent'}>
+                <FontAwesomeIcon className={'ingredient-container-result-nocontent-loading'}
                                  icon={['fas', 'spinner']}
                                  spin={true}/>
             </div>
@@ -39,8 +39,8 @@ class IngredientsContainerResult extends React.Component {
 
     renderError = (errorMessage) => {
         return errorMessage ?
-            <div className={'ingredient-result-nocontent'}>
-                <span className={'ingredient-result-nocontent-error'}>{errorMessage}</span>
+            <div className={'ingredient-container-result-nocontent'}>
+                <span className={'ingredient-container-result-nocontent-error'}>{errorMessage}</span>
             </div>
             : null
     }
@@ -54,4 +54,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps)(IngredientsContainerResult);
+export default connect(mapStateToProps)(IngredientContainerResult);

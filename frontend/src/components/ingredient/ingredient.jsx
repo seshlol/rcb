@@ -9,16 +9,16 @@ export default class Ingredient extends React.Component {
         const {imgSrc, imgAlt, name} = this.props.ingredient;
         return (
             <Row style={{margin: '0 0 0.25rem 0'}}>
-                <div className={'ingredients-result-item'}>
-                    <div className={'ingredients-result-item-logo'}>
+                <div className={'ingredient-container-result-item'}>
+                    <div className={'ingredient-container-result-item-logo'}>
                         {this.renderImgOrIcon(imgSrc, imgAlt)}
                     </div>
-                    <div className={'ingredients-result-item-info'}>
-                        <div className={'ingredients-result-item-info-name'}>
+                    <div className={'ingredient-container-result-item-info'}>
+                        <div className={'ingredient-container-result-item-info-name'}>
                             {name}
                         </div>
-                        <div className={'ingredients-result-item-info-actions'}>
-                            <FontAwesomeIcon className={'ingredients-result-item-info-actions-item'}
+                        <div className={'ingredient-container-result-item-info-actions'}>
+                            <FontAwesomeIcon className={'ingredient-container-result-item-info-actions-item'}
                                              icon={['far', 'plus-square']}/>
                         </div>
                     </div>
@@ -28,10 +28,10 @@ export default class Ingredient extends React.Component {
     };
 
     renderImgOrIcon = (imgSrc, imgAlt) => {
-        return imgSrc ? <img className={'ingredients-result-item-logo-img'}
+        return imgSrc ? <img className={'ingredient-container-result-item-logo-img'}
                              src={imgSrc}
                              alt={imgAlt}/>
-            : <FontAwesomeIcon className={'ingredients-result-item-logo-icon'}
+            : <FontAwesomeIcon className={'ingredient-container-result-item-logo-alt'}
                                icon={['fas', 'camera']}/>
     }
 }

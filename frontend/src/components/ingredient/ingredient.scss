@@ -1,6 +1,6 @@
 @import '../../styles/colors';
 
-.ingredients-result-item {
+.ingredient-container-result-item {
   display: flex;
   width: 100%;
   height: 4rem;
@@ -8,7 +8,7 @@
   border: 1px solid $color-4
 }
 
-.ingredients-result-item-logo {
+.ingredient-container-result-item-logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,13 +18,13 @@
   overflow: hidden;
 }
 
-.ingredients-result-item-logo-img {
+.ingredient-container-result-item-logo-img {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-.ingredients-result-item-logo-img:after {
+.ingredient-container-result-item-logo-img:after {
   position: absolute;
   top: 0;
   left: 0;
@@ -40,17 +40,17 @@
   content: attr(alt);
 }
 
-.ingredients-result-item-logo-icon {
+.ingredient-container-result-item-logo-alt {
   font-size: 2rem;
   color: $color-5;
 }
 
-.ingredients-result-item-info {
+.ingredient-container-result-item-info {
   display: block;
-  width: 100%;
+  width: calc(100% - 4rem - 1px);
 }
 
-.ingredients-result-item-info-name {
+.ingredient-container-result-item-info-name {
   display: flex;
   justify-content: left;
   align-items: center;
@@ -61,7 +61,7 @@
   border-bottom: 1px dotted $color-4;
 }
 
-.ingredients-result-item-info-actions {
+.ingredient-container-result-item-info-actions {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -69,7 +69,7 @@
   height: 50%;
 }
 
-.ingredients-result-item-info-actions-item {
+.ingredient-container-result-item-info-actions-item {
   margin: 0.25rem 0.25rem 0.25rem 0.25rem;
   font-size: 1.5rem;
   color: #3FBF3F;

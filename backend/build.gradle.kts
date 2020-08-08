@@ -21,7 +21,6 @@ dependencies {
     implementation("javax.validation:validation-api:2.0.1.Final")
 
     runtimeOnly("com.h2database:h2:1.4.200")
-    runtimeOnly("org.springframework.boot:spring-boot-devtools:2.3.1.RELEASE")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.3.72")
 }

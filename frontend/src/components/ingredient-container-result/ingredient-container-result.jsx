@@ -27,14 +27,20 @@ class IngredientContainerResult extends React.Component {
                                  icon={['fas', 'spinner']}
                                  spin={true}/>
             </div>
-            : null
+            : null;
     };
 
     renderIngredients = (ingredients) => {
-        return ingredients.map(ingredient => {
-            const {id, ...props} = ingredient;
-            return <Ingredient key={id} ingredient={props}/>;
-        })
+        return ingredients.length > 0 ?
+            <div className={'ingredient-container-result-content'}>
+                {
+                    ingredients.map(ingredient => {
+                        const {id, ...props} = ingredient;
+                        return <Ingredient key={id} ingredient={props}/>;
+                    })
+                }
+            </div>
+            : null;
     };
 
     renderError = (errorMessage) => {
@@ -42,7 +48,7 @@ class IngredientContainerResult extends React.Component {
             <div className={'ingredient-container-result-nocontent'}>
                 <span className={'ingredient-container-result-nocontent-error'}>{errorMessage}</span>
             </div>
-            : null
+            : null;
     }
 }
 
@@ -51,7 +57,7 @@ const mapStateToProps = (state) => {
         isLoading: state.ingredientReducer.isLoading,
         ingredients: state.ingredientReducer.ingredients,
         errorMessage: state.ingredientReducer.errorMessage
-    }
+    };
 };
 
 export default connect(mapStateToProps)(IngredientContainerResult);

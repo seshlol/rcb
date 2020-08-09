@@ -18,7 +18,9 @@ class IngredientService(private val ingredientRepository: IngredientRepository) 
         val pageable: Pageable = PageRequest.of(
                 ingredientRequestDto.page,
                 INGREDIENTS_PER_PAGE,
-                Sort.by(Order.desc("priority"))
+                Sort.by(
+                        Order.desc("priority")
+                )
         )
         val ingredientsPage = ingredientRepository.findByNameContainingIgnoreCase(
                 ingredientRequestDto.name,

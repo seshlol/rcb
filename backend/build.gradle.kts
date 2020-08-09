@@ -16,9 +16,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web:2.3.1.RELEASE")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.3.1.RELEASE")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf:2.3.1.RELEASE")
+    implementation("org.springframework.boot:spring-boot-starter-validation:2.3.1.RELEASE")
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.3.72")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.72")
-    implementation("javax.validation:validation-api:2.0.1.Final")
 
     runtimeOnly("com.h2database:h2:1.4.200")
 

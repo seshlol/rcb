@@ -14,9 +14,6 @@ import javax.validation.Valid
 class IngredientController(private val ingredientService: IngredientService) {
 
     @GetMapping("/ingredients")
-    fun getIngredients(
-            @Valid ingredientRequestDto: IngredientRequestDto
-    ): ResponseEntity<List<IngredientEntity>> {
-        return ResponseEntity.ok(ingredientService.getIngredients(ingredientRequestDto))
-    }
+    fun getIngredients(@Valid ingredientRequestDto: IngredientRequestDto): ResponseEntity<List<IngredientEntity>>
+            = ResponseEntity.ok(ingredientService.getIngredients(ingredientRequestDto))
 }

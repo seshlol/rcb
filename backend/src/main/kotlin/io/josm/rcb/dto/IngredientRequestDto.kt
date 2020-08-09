@@ -11,5 +11,5 @@ data class IngredientRequestDto(
 
         @field:Min(0)
         @field:Max(99)
-        val page: Int = 0
+        val page: Int
 )

@@ -3,5 +3,5 @@ import axios from 'axios';
 export default axios.create({
     baseURL: 'http://localhost:8080',
     responseType: 'json',
-    timeout: 8000
+    timeout: 4000
 });

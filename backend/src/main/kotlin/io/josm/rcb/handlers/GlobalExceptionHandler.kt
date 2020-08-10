@@ -13,21 +13,24 @@ class GlobalExceptionHandler {
 
     @ExceptionHandler(NotFoundException::class)
     fun handleNotFoundException(ex: NotFoundException): ResponseEntity<ErrorResponseDto> {
+        val reasonPhrase = ResponseEntity.status(404).build<Nothing>().statusCode.reasonPhrase
         val info = ex.message ?: ""
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body(ErrorResponseDto("${ErrorResponseDto.Message.NOT_FOUND}: $info"))
+                .body(ErrorResponseDto("$reasonPhrase: $info"))
     }
 
     @ExceptionHandler(BindException::class)
     fun handleBindException(ex: BindException): ResponseEntity<ErrorResponseDto> {
+        val reasonPhrase = ResponseEntity.status(400).build<Nothing>().statusCode.reasonPhrase
         val info = ex.bindingResult.fieldError?.defaultMessage ?: ""
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                .body(ErrorResponseDto("${ErrorResponseDto.Message.BAD_REQUEST}: $info"))
+                .body(ErrorResponseDto("$reasonPhrase: $info"))
     }
 
     @ExceptionHandler(Exception::class)
     fun handleException(ex: Exception): ResponseEntity<ErrorResponseDto> {
+        val reasonPhrase = ResponseEntity.status(500).build<Nothing>().statusCode.reasonPhrase
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(ErrorResponseDto(ErrorResponseDto.Message.INTERNAL_SERVER_ERROR))
+                .body(ErrorResponseDto(reasonPhrase))
     }
 }

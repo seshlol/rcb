@@ -31,7 +31,7 @@ class IngredientService(private val ingredientRepository: IngredientRepository) 
                 pageable
         )
         if (ingredientsPage.isEmpty) {
-            throw NotFoundException("no ingredients with name $name found ")
+            throw NotFoundException("no ingredients with this name found ")
         }
         return IngredientResponseDto(
                 ingredientsPage.toList(),

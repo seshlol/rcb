@@ -1,6 +1,6 @@
 package io.josm.rcb.handlers
 
-import io.josm.rcb.handlers.errors.ResponseError
+import io.josm.rcb.dto.response.ErrorResponseDto
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.validation.BindException
@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.ExceptionHandler
 class GlobalExceptionHandler {
 
     @ExceptionHandler(BindException::class)
-    fun handleWebBindException(ex: BindException): ResponseEntity<ResponseError> {
+    fun handleWebBindException(ex: BindException): ResponseEntity<ErrorResponseDto> {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                .body(ResponseError(ResponseError.Companion.Message.BAD_REQUEST.value))
+                .body(ErrorResponseDto(ErrorResponseDto.Message.BAD_REQUEST))
     }
 
     @ExceptionHandler(Exception::class)
-    fun handleException(ex: Exception): ResponseEntity<ResponseError> {
+    fun handleException(ex: Exception): ResponseEntity<ErrorResponseDto> {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(ResponseError(ResponseError.Companion.Message.INTERNAL_SERVER_ERROR.value))
+                .body(ErrorResponseDto(ErrorResponseDto.Message.INTERNAL_SERVER_ERROR))
     }
 }

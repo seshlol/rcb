@@ -1,6 +1,6 @@
 package io.josm.rcb.services
 
-import io.josm.rcb.dto.IngredientRequestDto
+import io.josm.rcb.dto.request.IngredientRequestDto
 import io.josm.rcb.entities.IngredientEntity
 import io.josm.rcb.repositories.IngredientRepository
 import org.springframework.data.domain.PageRequest

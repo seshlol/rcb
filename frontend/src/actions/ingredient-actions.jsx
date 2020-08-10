@@ -18,7 +18,7 @@ export const getIngredients = (name, page = 0) => {
                 }
             )
             .then((response) => {
-                dispatch(getIngredientsSuccess(response.data))
+                dispatch(getIngredientsSuccess(response.data.ingredients))
             })
             .catch((error) => {
                 dispatch(getIngredientsFailure(error.response.data.message))

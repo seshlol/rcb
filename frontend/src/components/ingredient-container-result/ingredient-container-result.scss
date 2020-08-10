@@ -17,8 +17,8 @@
 
 .ingredient-container-result-nocontent {
   display: flex;
-  width: 60%;
-  height: 60%;
+  width: 80%;
+  height: 80%;
   justify-content: center;
   align-items: center;
 }
@@ -29,6 +29,7 @@
 }
 
 .ingredient-container-result-nocontent-error {
-  font-size: 1.8rem;
+  text-align: center;
+  font-size: 1.6rem;
   color: $color-4;
 }

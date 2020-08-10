@@ -1,6 +1,7 @@
 package io.josm.rcb.controllers
 
 import io.josm.rcb.dto.request.IngredientRequestDto
+import io.josm.rcb.dto.response.IngredientResponseDto
 import io.josm.rcb.entities.IngredientEntity
 import io.josm.rcb.services.IngredientService
 import org.springframework.http.ResponseEntity
@@ -14,6 +15,6 @@ import javax.validation.Valid
 class IngredientController(private val ingredientService: IngredientService) {
 
     @GetMapping("/ingredients")
-    fun getIngredients(@Valid ingredientRequestDto: IngredientRequestDto): ResponseEntity<List<IngredientEntity>>
+    fun getIngredients(@Valid ingredientRequestDto: IngredientRequestDto): ResponseEntity<IngredientResponseDto>
             = ResponseEntity.ok(ingredientService.getIngredients(ingredientRequestDto))
 }

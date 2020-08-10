@@ -31,7 +31,7 @@ class IngredientService(private val ingredientRepository: IngredientRepository) 
                 pageable
         )
         if (ingredientsPage.isEmpty) {
-            throw NotFoundException("no ingredients with this name found ")
+            throw NotFoundException(NO_INGREDIENTS_FOUND_MESSAGE)
         }
         return IngredientResponseDto(
                 ingredientsPage.toList(),
@@ -42,5 +42,6 @@ class IngredientService(private val ingredientRepository: IngredientRepository) 
     companion object {
 
         private const val INGREDIENTS_PER_PAGE = 6
+        private const val NO_INGREDIENTS_FOUND_MESSAGE = "no ingredients with this name found"
     }
 }

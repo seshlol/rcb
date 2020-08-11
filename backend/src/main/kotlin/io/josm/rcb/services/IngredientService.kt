@@ -23,7 +23,7 @@ class IngredientService(private val ingredientRepository: IngredientRepository) 
                 page,
                 INGREDIENTS_PER_PAGE,
                 Sort.by(
-                        Order.desc("priority")
+                        Order.desc(SORT_ORDER_FIELD)
                 )
         )
         val ingredientsPage = ingredientRepository.findByNameContainingIgnoreCase(
@@ -42,6 +42,7 @@ class IngredientService(private val ingredientRepository: IngredientRepository) 
     companion object {
 
         private const val INGREDIENTS_PER_PAGE = 6
+        private const val SORT_ORDER_FIELD = "priority"
         private const val NO_INGREDIENTS_FOUND_MESSAGE = "no ingredients with this name found"
     }
 }

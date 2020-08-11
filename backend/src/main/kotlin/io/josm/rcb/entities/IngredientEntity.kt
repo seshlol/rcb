@@ -30,7 +30,7 @@ class IngredientEntity(
         val priority: Int = 0
 ) : BaseEntity<Long>() {
 
-        override fun toString(): String {
-                return "IngredientEntity(name='$name', description=$description, imgSrc=$imgSrc, imgAlt=$imgAlt, priority=$priority)"
-        }
+    override fun toString(): String {
+        return "IngredientEntity(name='$name', description=$description, imgSrc=$imgSrc, imgAlt=$imgAlt, priority=$priority)"
+    }
 }

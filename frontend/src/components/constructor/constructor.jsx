@@ -12,7 +12,7 @@ export default class Constructor extends React.Component {
             <Container style={{paddingLeft: '0', paddingRight: '0.5rem'}} fluid>
                 <Row nogutter>
                     <Col xl={4} lg={6}>
-                        <div className={'ingredient-container'}>
+                        <div className={'constructor-container'}>
                             <IngredientContainer/>
                         </div>
                     </Col>

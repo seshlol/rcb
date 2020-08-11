@@ -24,7 +24,7 @@ class IngredientContainerResult extends React.Component {
         return isLoading ?
             <div className={'ingredient-container-result-nocontent'}>
                 <FontAwesomeIcon className={'ingredient-container-result-nocontent-loading'}
-                                 icon={['fas', 'spinner']}
+                                 icon={['fas', 'pepper-hot']}
                                  spin={true}/>
             </div>
             : null;

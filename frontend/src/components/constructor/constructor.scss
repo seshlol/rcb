@@ -1,6 +1,7 @@
 @import '../../styles/colors';
 
 .constructor-container {
+  min-width: calc(320px - 2px - 8px - 0.5rem);
   margin: 0 0.5rem 0.5rem 0;
   border: 1px solid $color-2;
   border-radius: 0.25rem;

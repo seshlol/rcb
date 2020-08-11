@@ -1,0 +1,25 @@
+@import '../../styles/colors';
+
+.ingredient-container-navigation-button {
+  width: 100%;
+  height: calc(2rem + 2px);
+  background-color: $color-3;
+  border: 1px solid $color-3;
+  cursor: pointer;
+}
+
+.ingredient-container-navigation-button:focus {
+  outline: none;
+}
+
+.ingredient-container-navigation-button-first {
+  border-radius: 0.25rem;
+}
+
+.ingredient-container-navigation-button-previous {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.ingredient-container-navigation-button-next {
+  border-radius: 0 0.25rem 0.25rem 0;
+}

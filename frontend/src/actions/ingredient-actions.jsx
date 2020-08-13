@@ -2,8 +2,7 @@ import axios from '../api/axios'
 import {
     GET_INGREDIENTS_STARTED,
     GET_INGREDIENTS_SUCCESS,
-    GET_INGREDIENTS_FAILURE,
-    GET_MORE_INGREDIENTS
+    GET_INGREDIENTS_FAILURE
 } from '../constants/action-types';
 
 export const getIngredients = (name, page = 0) => {

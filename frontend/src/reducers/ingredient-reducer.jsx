@@ -2,10 +2,10 @@ import {GET_INGREDIENTS_FAILURE, GET_INGREDIENTS_STARTED, GET_INGREDIENTS_SUCCES
 
 const initialState = {
     isLoading: false,
-    errorMessage: null,
     ingredients: [],
     currentPage: null,
-    pagesAvailable: null
+    pagesAvailable: null,
+    errorMessage: null
 };
 
 export default (state = initialState, {type, payload}) => {

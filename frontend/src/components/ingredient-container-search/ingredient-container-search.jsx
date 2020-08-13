@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Row from 'react-grid-system/build/grid/Row';
+import Col from 'react-grid-system/build/grid/Col';
 import {connect} from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {getIngredients} from '../../actions/ingredient-actions';
@@ -16,14 +17,18 @@ class IngredientContainerSearch extends React.Component {
             <Row style={{margin: '0.5rem'}}>
                 <form className={'ingredient-container-search'}
                       onSubmit={this.handleSubmit}>
-                    <input className={'ingredient-container-search-input'}
-                           placeholder={'ingredient name'}
-                           value={this.state.name}
-                           onChange={this.handleChange}/>
-                    <button className={'ingredient-container-search-button'}>
-                        <FontAwesomeIcon className={'ingredient-container-search-button-icon'}
-                                         icon={['fas', 'search']}/>
-                    </button>
+                    <Col xs={10} style={{padding: 0}}>
+                        <input className={'ingredient-container-search-input'}
+                               placeholder={'ingredient name'}
+                               value={this.state.name}
+                               onChange={this.handleChange}/>
+                    </Col>
+                    <Col xs={2} style={{padding: 0}}>
+                        <button className={'ingredient-container-search-button'}>
+                            <FontAwesomeIcon className={'ingredient-container-search-button-icon'}
+                                             icon={['fas', 'search']}/>
+                        </button>
+                    </Col>
                 </form>
             </Row>
         );

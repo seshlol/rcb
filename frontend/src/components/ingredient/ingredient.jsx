@@ -28,11 +28,15 @@ export default class Ingredient extends React.Component {
     };
 
     renderImgOrIcon = (imgSrc, imgAlt) => {
-        return imgSrc ? <img className={'ingredient-container-result-item-logo-img'}
-                             src={imgSrc}
-                             alt={imgAlt}/>
-            : <FontAwesomeIcon className={'ingredient-container-result-item-logo-alt'}
-                               icon={['fas', 'camera']}/>
+        return imgSrc ? (
+                <img className={'ingredient-container-result-item-logo-img'}
+                     src={imgSrc}
+                     alt={imgAlt}/>
+            )
+            : (
+                <FontAwesomeIcon className={'ingredient-container-result-item-logo-alt'}
+                                 icon={['fas', 'camera']}/>
+            );
     }
 }
 

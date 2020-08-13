@@ -1,14 +1,11 @@
-import {
-    GET_INGREDIENTS_STARTED,
-    GET_INGREDIENTS_SUCCESS,
-    GET_INGREDIENTS_FAILURE,
-    GET_MORE_INGREDIENTS
-} from '../constants/action-types';
+import {GET_INGREDIENTS_FAILURE, GET_INGREDIENTS_STARTED, GET_INGREDIENTS_SUCCESS} from '../constants/action-types';
 
 const initialState = {
     isLoading: false,
+    errorMessage: null,
     ingredients: [],
-    errorMessage: null
+    currentPage: null,
+    pagesAvailable: null
 };
 
 export default (state = initialState, {type, payload}) => {
@@ -34,10 +31,6 @@ export default (state = initialState, {type, payload}) => {
                 ingredients: [],
                 errorMessage: payload
             };
-
-        case GET_MORE_INGREDIENTS:
-            return {...state, ingredients: state.ingredients.concat(payload)};
-
         default:
             return state;
     }

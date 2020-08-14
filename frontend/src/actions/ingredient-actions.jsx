@@ -17,10 +17,10 @@ export const getIngredients = (name, page = 0) => {
                 }
             )
             .then((response) => {
-                dispatch(getIngredientsSuccess(response.data.ingredients))
+                dispatch(getIngredientsSuccess({...response.data, page}))
             })
             .catch((error) => {
-                dispatch(getIngredientsFailure(error.response.data.message))
+                dispatch(getIngredientsFailure(error.response.data))
             });
     }
 };

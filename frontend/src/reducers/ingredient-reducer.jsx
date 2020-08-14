@@ -1,10 +1,14 @@
-import {GET_INGREDIENTS_FAILURE, GET_INGREDIENTS_STARTED, GET_INGREDIENTS_SUCCESS} from '../constants/action-types';
+import {
+    GET_INGREDIENTS_FAILURE,
+    GET_INGREDIENTS_STARTED,
+    GET_INGREDIENTS_SUCCESS
+} from '../constants/action-types';
 
 const initialState = {
     isLoading: false,
-    ingredients: [],
+    ingredientPages: [],
     currentPage: null,
-    pagesAvailable: null,
+    totalPages: null,
     errorMessage: null
 };
 
@@ -14,22 +18,29 @@ export default (state = initialState, {type, payload}) => {
             return {
                 ...state,
                 isLoading: true,
-                ingredients: [],
+                ingredientPages: [],
                 errorMessage: null
             };
         case GET_INGREDIENTS_SUCCESS:
+            const ingredientPages = payload.page === 0 ?
+                [payload.ingredients]
+                : [...state.ingredientPages, payload.ingredients]
             return {
                 ...state,
                 isLoading: false,
-                ingredients: payload,
+                ingredientPages: ingredientPages,
+                currentPage: payload.page,
+                totalPages: payload.totalPages,
                 errorMessage: null
             };
         case GET_INGREDIENTS_FAILURE:
             return {
                 ...state,
                 isLoading: false,
-                ingredients: [],
-                errorMessage: payload
+                ingredientPages: [],
+                currentPage: null,
+                totalPages: null,
+                errorMessage: payload.message
             };
         default:
             return state;

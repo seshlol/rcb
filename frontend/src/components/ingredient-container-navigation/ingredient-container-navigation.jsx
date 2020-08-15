@@ -84,10 +84,10 @@ class IngredientContainerNavigation extends React.Component {
 
     handleNextButtonClick = () => {
         const {name, ingredientPages, currentPage} = this.props;
-        if ((currentPage + 1) === ingredientPages.length) {
-            this.props.getIngredients(name, currentPage + 1);
-        } else {
+        if (ingredientPages[currentPage + 1]) {
             this.props.setIngredientPage(currentPage + 1);
+        } else {
+            this.props.getIngredients(name, currentPage + 1);
         }
     };
 }

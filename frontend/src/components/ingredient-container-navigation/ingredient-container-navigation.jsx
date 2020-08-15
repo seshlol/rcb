@@ -4,7 +4,7 @@ import Col from 'react-grid-system/build/grid/Col';
 import {connect} from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import './ingredient-container-navigation.scss';
-import {getIngredients} from '../../actions/ingredient-actions';
+import {getIngredients, setIngredients} from '../../actions/ingredient-actions';
 
 class IngredientContainerNavigation extends React.Component {
 
@@ -27,7 +27,8 @@ class IngredientContainerNavigation extends React.Component {
 
     renderFirstPageButton = (currentPage) => {
         return currentPage > 0 ? (
-                <button className={'ingredient-container-navigation-button ingredient-container-navigation-button-first'}>
+                <button className={'ingredient-container-navigation-button ingredient-container-navigation-button-first'}
+                        onClick={this.handleFirstButtonClick}>
                     <FontAwesomeIcon className={'ingredient-container-search-button-icon'}
                                      icon={['fas', 'angle-double-left']}/>
                 </button>
@@ -38,8 +39,9 @@ class IngredientContainerNavigation extends React.Component {
     renderPreviousPageButton = (currentPage) => {
         return currentPage > 0 ? (
                 <button
-                    className={'ingredient-container-navigation-button ingredient-container-navigation-button-previous'}>
-                    <FontAwesomeIcon className={'ingredient-container-search-button-icon'}
+                    className={'ingredient-container-navigation-button ingredient-container-navigation-button-previous'}
+                    onClick={this.handlePreviousButtonClick}>
+                <FontAwesomeIcon className={'ingredient-container-search-button-icon'}
                                      icon={['fas', 'angle-left']}/>
                 </button>
             )
@@ -58,14 +60,27 @@ class IngredientContainerNavigation extends React.Component {
             : null;
     };
 
+    handleFirstButtonClick = () => {
+        this.props.setIngredients(0);
+    };
+
+    handlePreviousButtonClick = () => {
+        const {currentPage} = this.props;
+        this.props.setIngredients(currentPage - 1);
+    };
+
     handleNextButtonClick = () => {
-        this.props.getIngredients(this.props.name, this.props.currentPage + 1);
+        const {name, ingredientPages, currentPage} = this.props;
+        (currentPage + 1) === ingredientPages.length ?
+            this.props.getIngredients(name, currentPage + 1)
+            : this.props.setIngredients(currentPage + 1);
     };
 }
 
 const mapStateToProps = (state) => {
     return {
         name: state.ingredientReducer.name,
+        ingredientPages: state.ingredientReducer.ingredientPages,
         currentPage: state.ingredientReducer.currentPage,
         totalPages: state.ingredientReducer.totalPages
     };
@@ -73,7 +88,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getIngredients: (ingredients, page) => dispatch(getIngredients(ingredients, page))
+        getIngredients: (ingredients, page) => dispatch(getIngredients(ingredients, page)),
+        setIngredients: page => dispatch(setIngredients(page))
     }
 };
 

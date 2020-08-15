@@ -1,7 +1,8 @@
 import {
     GET_INGREDIENTS_FAILURE,
     GET_INGREDIENTS_STARTED,
-    GET_INGREDIENTS_SUCCESS
+    GET_INGREDIENTS_SUCCESS,
+    SET_INGREDIENTS
 } from '../constants/action-types';
 
 const initialState = {
@@ -42,6 +43,11 @@ export default (state = initialState, {type, payload}) => {
                 currentPage: null,
                 totalPages: null,
                 errorMessage: payload.message
+            };
+        case SET_INGREDIENTS:
+            return {
+              ...state,
+              currentPage: payload.page
             };
         default:
             return state;

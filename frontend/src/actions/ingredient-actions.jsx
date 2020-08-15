@@ -1,8 +1,9 @@
 import axios from '../api/axios'
 import {
+    GET_INGREDIENTS_FAILURE,
     GET_INGREDIENTS_STARTED,
     GET_INGREDIENTS_SUCCESS,
-    GET_INGREDIENTS_FAILURE
+    SET_INGREDIENTS
 } from '../constants/action-types';
 
 export const getIngredients = (name, page = 0) => {
@@ -41,10 +42,18 @@ export const getIngredients = (name, page = 0) => {
     }
 };
 
+export const setIngredients = (page) => {
+    const payload = {page};
+    return {
+        type: SET_INGREDIENTS,
+        payload
+    };
+};
+
 const getIngredientsStarted = () => {
     return {
         type: GET_INGREDIENTS_STARTED
-    }
+    };
 };
 
 const getIngredientsSuccess = (payload) => {
@@ -58,6 +67,6 @@ const getIngredientsFailure = (payload) => {
     return {
         type: GET_INGREDIENTS_FAILURE,
         payload
-    }
+    };
 };
 

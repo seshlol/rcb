@@ -15,7 +15,11 @@ class IngredientContainerNavigation extends React.Component {
                 <Col xs={2} style={{padding: 0}}>
                     {this.renderFirstPageButton(currentPage)}
                 </Col>
-                <Col xs={2} offset={{xs: 6}} style={{padding: 0, right: '1%'}}>
+                <Col xs={2} offset={{xs: 3}} style={{padding: 0,
+                    display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    {this.renderTip(currentPage)}
+                </Col>
+                <Col xs={2} offset={{xs: 1}} style={{padding: 0, right: '1%'}}>
                     {this.renderPreviousPageButton(currentPage)}
                 </Col>
                 <Col xs={2} style={{padding: 0}}>
@@ -36,12 +40,21 @@ class IngredientContainerNavigation extends React.Component {
             : null;
     };
 
+    renderTip = (currentPage) => {
+        return currentPage !== null ? (
+                <span className={'ingredient-container-navigation-tip'}>
+                    Page {currentPage + 1}
+                </span>
+            )
+            : null;
+    };
+
     renderPreviousPageButton = (currentPage) => {
         return currentPage > 0 ? (
                 <button
                     className={'ingredient-container-navigation-button ingredient-container-navigation-button-previous'}
                     onClick={this.handlePreviousButtonClick}>
-                <FontAwesomeIcon className={'ingredient-container-search-button-icon'}
+                    <FontAwesomeIcon className={'ingredient-container-search-button-icon'}
                                      icon={['fas', 'angle-left']}/>
                 </button>
             )
@@ -49,7 +62,7 @@ class IngredientContainerNavigation extends React.Component {
     };
 
     renderNextPageButton = (currentPage, totalPages) => {
-        return (currentPage + 1) < totalPages ? (
+        return currentPage + 1 < totalPages ? (
                 <button
                     className={'ingredient-container-navigation-button ingredient-container-navigation-button-next'}
                     onClick={this.handleNextButtonClick}>

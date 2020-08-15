@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import './ingredient-container-navigation.scss';
 import {getIngredients, setIngredientPage} from '../../actions/ingredient-actions';
+import {MAX_INGREDIENT_PAGES} from '../../constants/ingredients';
 
 class IngredientContainerNavigation extends React.Component {
 
@@ -17,7 +18,7 @@ class IngredientContainerNavigation extends React.Component {
                 </Col>
                 <Col xs={2} offset={{xs: 3}} style={{padding: 0,
                     display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                    {this.renderTip(currentPage)}
+                    {this.renderTip(currentPage, totalPages)}
                 </Col>
                 <Col xs={2} offset={{xs: 1}} style={{padding: 0, right: '1%'}}>
                     {this.renderPreviousPageButton(currentPage)}
@@ -40,10 +41,10 @@ class IngredientContainerNavigation extends React.Component {
             : null;
     };
 
-    renderTip = (currentPage) => {
+    renderTip = (currentPage, totalPages) => {
         return currentPage !== null ? (
                 <span className={'ingredient-container-navigation-tip'}>
-                    Page {currentPage + 1}
+                    {currentPage + 1}/{totalPages}
                 </span>
             )
             : null;
@@ -62,7 +63,7 @@ class IngredientContainerNavigation extends React.Component {
     };
 
     renderNextPageButton = (currentPage, totalPages) => {
-        return currentPage + 1 < totalPages ? (
+        return currentPage + 1 < totalPages && currentPage + 1 < MAX_INGREDIENT_PAGES ? (
                 <button
                     className={'ingredient-container-navigation-button ingredient-container-navigation-button-next'}
                     onClick={this.handleNextButtonClick}>

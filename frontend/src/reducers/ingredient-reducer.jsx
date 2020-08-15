@@ -2,7 +2,7 @@ import {
     GET_INGREDIENTS_FAILURE,
     GET_INGREDIENTS_STARTED,
     GET_INGREDIENTS_SUCCESS,
-    SET_INGREDIENTS
+    SET_INGREDIENT_PAGE
 } from '../constants/action-types';
 
 const initialState = {
@@ -22,21 +22,18 @@ export default (state = initialState, {type, payload}) => {
                 isLoading: true,
             };
         case GET_INGREDIENTS_SUCCESS:
-            const ingredientPages = payload.page === 0 ?
-                [payload.ingredients]
+            const ingredientPages = payload.page === 0 ? [payload.ingredients]
                 : [...state.ingredientPages, payload.ingredients];
             return {
-                ...state,
                 isLoading: false,
                 name: payload.name,
-                ingredientPages: ingredientPages,
+                ingredientPages,
                 currentPage: payload.page,
                 totalPages: payload.totalPages,
                 errorMessage: null
             };
         case GET_INGREDIENTS_FAILURE:
             return {
-                ...state,
                 isLoading: false,
                 name: null,
                 ingredientPages: [],
@@ -44,10 +41,10 @@ export default (state = initialState, {type, payload}) => {
                 totalPages: null,
                 errorMessage: payload.message
             };
-        case SET_INGREDIENTS:
+        case SET_INGREDIENT_PAGE:
             return {
-              ...state,
-              currentPage: payload.page
+                ...state,
+                currentPage: payload.page
             };
         default:
             return state;

@@ -3,49 +3,32 @@ import {
     GET_INGREDIENTS_FAILURE,
     GET_INGREDIENTS_STARTED,
     GET_INGREDIENTS_SUCCESS,
-    SET_INGREDIENTS
+    SET_INGREDIENT_PAGE
 } from '../constants/action-types';
 
 export const getIngredients = (name, page = 0) => {
     return (dispatch) => {
         dispatch(getIngredientsStarted());
-
-        setTimeout(() => {
-            axios
-                .get(
-                    '/constructor/ingredients',
-                    {
-                        params: {name, page}
-                    }
-                )
-                .then((response) => {
-                    dispatch(getIngredientsSuccess({...response.data, name, page}))
-                })
-                .catch((error) => {
-                    dispatch(getIngredientsFailure(error.response.data))
-                });
-        }, 500);
-
-        // axios
-        //     .get(
-        //         '/constructor/ingredients',
-        //         {
-        //             params: {name, page}
-        //         }
-        //     )
-        //     .then((response) => {
-        //         dispatch(getIngredientsSuccess({...response.data, name, page}))
-        //     })
-        //     .catch((error) => {
-        //         dispatch(getIngredientsFailure(error.response.data))
-        //     });
+        axios
+            .get(
+                '/constructor/ingredients',
+                {
+                    params: {name, page}
+                }
+            )
+            .then((response) => {
+                dispatch(getIngredientsSuccess({...response.data, name, page}))
+            })
+            .catch((error) => {
+                dispatch(getIngredientsFailure(error.response.data))
+            });
     }
 };
 
-export const setIngredients = (page) => {
+export const setIngredientPage = (page) => {
     const payload = {page};
     return {
-        type: SET_INGREDIENTS,
+        type: SET_INGREDIENT_PAGE,
         payload
     };
 };

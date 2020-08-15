@@ -4,7 +4,7 @@ import Col from 'react-grid-system/build/grid/Col';
 import {connect} from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import './ingredient-container-navigation.scss';
-import {getIngredients, setIngredients} from '../../actions/ingredient-actions';
+import {getIngredients, setIngredientPage} from '../../actions/ingredient-actions';
 
 class IngredientContainerNavigation extends React.Component {
 
@@ -49,7 +49,7 @@ class IngredientContainerNavigation extends React.Component {
     };
 
     renderNextPageButton = (currentPage, totalPages) => {
-        return currentPage + 1 < totalPages ? (
+        return (currentPage + 1) < totalPages ? (
                 <button
                     className={'ingredient-container-navigation-button ingredient-container-navigation-button-next'}
                     onClick={this.handleNextButtonClick}>
@@ -61,19 +61,21 @@ class IngredientContainerNavigation extends React.Component {
     };
 
     handleFirstButtonClick = () => {
-        this.props.setIngredients(0);
+        this.props.setIngredientPage(0);
     };
 
     handlePreviousButtonClick = () => {
         const {currentPage} = this.props;
-        this.props.setIngredients(currentPage - 1);
+        this.props.setIngredientPage(currentPage - 1);
     };
 
     handleNextButtonClick = () => {
         const {name, ingredientPages, currentPage} = this.props;
-        (currentPage + 1) === ingredientPages.length ?
-            this.props.getIngredients(name, currentPage + 1)
-            : this.props.setIngredients(currentPage + 1);
+        if ((currentPage + 1) === ingredientPages.length) {
+            this.props.getIngredients(name, currentPage + 1);
+        } else {
+            this.props.setIngredientPage(currentPage + 1);
+        }
     };
 }
 
@@ -89,7 +91,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         getIngredients: (ingredients, page) => dispatch(getIngredients(ingredients, page)),
-        setIngredients: page => dispatch(setIngredients(page))
+        setIngredientPage: (page) => dispatch(setIngredientPage(page))
     }
 };
 

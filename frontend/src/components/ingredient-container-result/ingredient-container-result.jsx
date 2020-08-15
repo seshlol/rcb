@@ -8,50 +8,58 @@ import './ingredient-container-result.scss';
 class IngredientContainerResult extends React.Component {
 
     render = () => {
-        const {isLoading, ingredientPages, currentPage, errorMessage} = this.props;
-        const ingredientsToRender = ingredientPages[currentPage];
         return (
             <Row style={{margin: '0.5rem'}}>
                 <div className={'ingredient-container-result'}>
-                    {
-                        isLoading ? this.renderLoading()
-                            : ingredientsToRender ? this.renderIngredients(ingredientsToRender)
-                            : this.renderError(errorMessage)
-                    }
+                    {this.renderResult()}
                 </div>
             </Row>
         );
     };
 
+    renderResult = () => {
+        const {isLoading, ingredientPages, currentPage, errorMessage} = this.props;
+        const ingredientsToRender = ingredientPages[currentPage];
+        if (isLoading) {
+            return this.renderLoading();
+        } else {
+            if (ingredientsToRender) {
+                return this.renderIngredients(ingredientsToRender);
+            } else {
+                return this.renderError(errorMessage);
+            }
+        }
+    };
+
     renderLoading = () => {
         return (
-                <div className={'ingredient-container-result-nocontent'}>
-                    <FontAwesomeIcon className={'ingredient-container-result-nocontent-loading'}
-                                     icon={['fas', 'spinner']}
-                                     spin={true}/>
-                </div>
-            );
+            <div className={'ingredient-container-result-nocontent'}>
+                <FontAwesomeIcon className={'ingredient-container-result-nocontent-loading'}
+                                 icon={['fas', 'spinner']}
+                                 spin={true}/>
+            </div>
+        );
     };
 
     renderIngredients = (ingredients) => {
         return (
-                <div className={'ingredient-container-result-content'}>
-                    {
-                        ingredients.map(ingredient => {
-                            const {id, ...props} = ingredient;
-                            return <Ingredient key={id} ingredient={props}/>;
-                        })
-                    }
-                </div>
-            );
+            <div className={'ingredient-container-result-content'}>
+                {
+                    ingredients.map(ingredient => {
+                        const {id, ...props} = ingredient;
+                        return <Ingredient key={id} ingredient={props}/>;
+                    })
+                }
+            </div>
+        );
     };
 
     renderError = (errorMessage) => {
         return (
-                <div className={'ingredient-container-result-nocontent'}>
-                    <span className={'ingredient-container-result-nocontent-error'}>{errorMessage}</span>
-                </div>
-            );
+            <div className={'ingredient-container-result-nocontent'}>
+                <span className={'ingredient-container-result-nocontent-error'}>{errorMessage}</span>
+            </div>
+        );
     }
 }
 

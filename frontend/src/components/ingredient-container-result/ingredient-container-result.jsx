@@ -14,7 +14,7 @@ class IngredientContainerResult extends React.Component {
             <Row style={{margin: '0.5rem'}}>
                 <div className={'ingredient-container-result'}>
                     {
-                        isLoading ? this.renderLoading(isLoading)
+                        isLoading ? this.renderLoading()
                             : ingredientsToRender ? this.renderIngredients(ingredientsToRender)
                             : this.renderError(errorMessage)
                     }
@@ -23,19 +23,18 @@ class IngredientContainerResult extends React.Component {
         );
     };
 
-    renderLoading = (isLoading) => {
-        return isLoading ? (
+    renderLoading = () => {
+        return (
                 <div className={'ingredient-container-result-nocontent'}>
                     <FontAwesomeIcon className={'ingredient-container-result-nocontent-loading'}
                                      icon={['fas', 'spinner']}
                                      spin={true}/>
                 </div>
-            )
-            : null;
+            );
     };
 
     renderIngredients = (ingredients) => {
-        return ingredients ? (
+        return (
                 <div className={'ingredient-container-result-content'}>
                     {
                         ingredients.map(ingredient => {
@@ -44,17 +43,15 @@ class IngredientContainerResult extends React.Component {
                         })
                     }
                 </div>
-            )
-            : null;
+            );
     };
 
     renderError = (errorMessage) => {
-        return errorMessage ? (
+        return (
                 <div className={'ingredient-container-result-nocontent'}>
                     <span className={'ingredient-container-result-nocontent-error'}>{errorMessage}</span>
                 </div>
-            )
-            : null;
+            );
     }
 }
 

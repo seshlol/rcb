@@ -5,7 +5,6 @@ import {connect} from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import './ingredient-container-navigation.scss';
 import {getIngredients, setIngredientPage} from '../../actions/ingredient-actions';
-import {MAX_INGREDIENT_PAGES} from '../../constants/ingredients';
 
 class IngredientContainerNavigation extends React.Component {
 
@@ -63,7 +62,7 @@ class IngredientContainerNavigation extends React.Component {
     };
 
     renderNextPageButton = (currentPage, totalPages) => {
-        return currentPage + 1 < totalPages && currentPage + 1 < MAX_INGREDIENT_PAGES ? (
+        return currentPage + 1 < totalPages ? (
                 <button
                     className={'ingredient-container-navigation-button ingredient-container-navigation-button-next'}
                     onClick={this.handleNextButtonClick}>

@@ -1,1 +1,0 @@
-export const MAX_INGREDIENT_PAGES = 100;

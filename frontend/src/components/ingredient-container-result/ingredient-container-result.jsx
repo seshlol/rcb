@@ -9,12 +9,15 @@ class IngredientContainerResult extends React.Component {
 
     render = () => {
         const {isLoading, ingredientPages, currentPage, errorMessage} = this.props;
+        const ingredientsToRender = ingredientPages[currentPage];
         return (
             <Row style={{margin: '0.5rem'}}>
                 <div className={'ingredient-container-result'}>
-                    {this.renderLoading(isLoading)}
-                    {this.renderIngredients(ingredientPages[currentPage])}
-                    {this.renderError(errorMessage)}
+                    {
+                        isLoading ? this.renderLoading(isLoading)
+                            : ingredientsToRender ? this.renderIngredients(ingredientsToRender)
+                            : this.renderError(errorMessage)
+                    }
                 </div>
             </Row>
         );

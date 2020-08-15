@@ -6,6 +6,7 @@ import {
 
 const initialState = {
     isLoading: false,
+    name: null,
     ingredientPages: [],
     currentPage: null,
     totalPages: null,
@@ -18,16 +19,15 @@ export default (state = initialState, {type, payload}) => {
             return {
                 ...state,
                 isLoading: true,
-                ingredientPages: [],
-                errorMessage: null
             };
         case GET_INGREDIENTS_SUCCESS:
             const ingredientPages = payload.page === 0 ?
                 [payload.ingredients]
-                : [...state.ingredientPages, payload.ingredients]
+                : [...state.ingredientPages, payload.ingredients];
             return {
                 ...state,
                 isLoading: false,
+                name: payload.name,
                 ingredientPages: ingredientPages,
                 currentPage: payload.page,
                 totalPages: payload.totalPages,
@@ -37,6 +37,7 @@ export default (state = initialState, {type, payload}) => {
             return {
                 ...state,
                 isLoading: false,
+                name: null,
                 ingredientPages: [],
                 currentPage: null,
                 totalPages: null,

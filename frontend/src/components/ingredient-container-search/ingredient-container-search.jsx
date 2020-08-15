@@ -47,7 +47,7 @@ class IngredientContainerSearch extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getIngredients: ingredients => dispatch(getIngredients(ingredients))
+        getIngredients: (ingredients, page) => dispatch(getIngredients(ingredients, page))
     }
 };
 

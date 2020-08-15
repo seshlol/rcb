@@ -47,9 +47,7 @@ class IngredientContainerNavigation extends React.Component {
     };
 
     renderNextPageButton = (currentPage, totalPages) => {
-        console.log("currentPage", currentPage);
-        console.log("totalPages", totalPages);
-        return currentPage < totalPages ? (
+        return currentPage + 1 < totalPages ? (
                 <button
                     className={'ingredient-container-navigation-button ingredient-container-navigation-button-next'}
                     onClick={this.handleNextButtonClick}>
@@ -61,14 +59,13 @@ class IngredientContainerNavigation extends React.Component {
     };
 
     handleNextButtonClick = () => {
-        console.log(this.state);
-        console.log(this.props);
-        this.props.getIngredients(this.state.name, this.props.currentPage + 1);
+        this.props.getIngredients(this.props.name, this.props.currentPage + 1);
     };
 }
 
 const mapStateToProps = (state) => {
     return {
+        name: state.ingredientReducer.name,
         currentPage: state.ingredientReducer.currentPage,
         totalPages: state.ingredientReducer.totalPages
     };
@@ -76,7 +73,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getIngredients: ingredients => dispatch(getIngredients(ingredients))
+        getIngredients: (ingredients, page) => dispatch(getIngredients(ingredients, page))
     }
 };
 

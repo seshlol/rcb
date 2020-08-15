@@ -9,19 +9,35 @@ export const getIngredients = (name, page = 0) => {
     return (dispatch) => {
         dispatch(getIngredientsStarted());
 
-        axios
-            .get(
-                '/constructor/ingredients',
-                {
-                    params: {name, page}
-                }
-            )
-            .then((response) => {
-                dispatch(getIngredientsSuccess({...response.data, page}))
-            })
-            .catch((error) => {
-                dispatch(getIngredientsFailure(error.response.data))
-            });
+        setTimeout(() => {
+            axios
+                .get(
+                    '/constructor/ingredients',
+                    {
+                        params: {name, page}
+                    }
+                )
+                .then((response) => {
+                    dispatch(getIngredientsSuccess({...response.data, name, page}))
+                })
+                .catch((error) => {
+                    dispatch(getIngredientsFailure(error.response.data))
+                });
+        }, 500);
+
+        // axios
+        //     .get(
+        //         '/constructor/ingredients',
+        //         {
+        //             params: {name, page}
+        //         }
+        //     )
+        //     .then((response) => {
+        //         dispatch(getIngredientsSuccess({...response.data, name, page}))
+        //     })
+        //     .catch((error) => {
+        //         dispatch(getIngredientsFailure(error.response.data))
+        //     });
     }
 };
 
@@ -45,9 +61,3 @@ const getIngredientsFailure = (payload) => {
     }
 };
 
-export const getMoreIngredients = (payload) => {
-    return {
-        type: GET_MORE_INGREDIENTS,
-        payload
-    }
-};

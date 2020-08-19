@@ -43,7 +43,7 @@ class IngredientContainerNavigation extends React.Component {
     renderTip = (currentPage, totalPages) => {
         return currentPage !== null ? (
                 <span className={'ingredient-container-navigation-tip'}>
-                    Page {currentPage + 1}/{totalPages}
+                    {currentPage + 1}/{totalPages}
                 </span>
             )
             : null;

@@ -15,8 +15,8 @@ class IngredientContainerNavigation extends React.Component {
                 <Col xs={2} style={{padding: 0}}>
                     {this.renderFirstPageButton(currentPage)}
                 </Col>
-                <Col xs={2} offset={{xs: 3}} style={{padding: 0,
-                    display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <Col xs={2} offset={{xs: 3}}
+                     style={{padding: 0, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     {this.renderTip(currentPage, totalPages)}
                 </Col>
                 <Col xs={2} offset={{xs: 1}} style={{padding: 0, right: '1%'}}>

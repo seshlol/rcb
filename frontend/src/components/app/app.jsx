@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Switch, Route, Redirect} from 'react-router-dom';
+import {Redirect, Route, Switch} from 'react-router-dom';
 import Constructor from '../constructor';
 import '../fa-library/fa-library';
 import './app.scss';

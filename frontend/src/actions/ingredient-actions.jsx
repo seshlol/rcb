@@ -20,7 +20,11 @@ export const getIngredients = (name, page = 0) => {
                 dispatch(getIngredientsSuccess({...response.data, name, page}))
             })
             .catch((error) => {
-                dispatch(getIngredientsFailure(error.response.data))
+                //todo
+                const errorWrapper = 'ECONNABORTED' === error.code ?
+                    {message: `Timeout: ${error.config.timeout}ms exceeded`}
+                    : error.response.data;
+                dispatch(getIngredientsFailure(errorWrapper));
             });
     }
 };

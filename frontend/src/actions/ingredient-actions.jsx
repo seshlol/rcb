@@ -1,4 +1,5 @@
-import axios from '../api/axios'
+import axios from '../api/axios';
+import axiosErrorHandler from '../api/axios-error-handler';
 import {
     GET_INGREDIENTS_FAILURE,
     GET_INGREDIENTS_STARTED,
@@ -20,13 +21,9 @@ export const getIngredients = (name, page = 0) => {
                 dispatch(getIngredientsSuccess({...response.data, name, page}))
             })
             .catch((error) => {
-                //todo
-                const errorWrapper = 'ECONNABORTED' === error.code ?
-                    {message: `Timeout: ${error.config.timeout}ms exceeded`}
-                    : error.response.data;
-                dispatch(getIngredientsFailure(errorWrapper));
+                dispatch(getIngredientsFailure(axiosErrorHandler(error)));
             });
-    }
+    };
 };
 
 export const setIngredientPage = (page) => {

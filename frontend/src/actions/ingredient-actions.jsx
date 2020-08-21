@@ -20,8 +20,9 @@ export const getIngredients = (name, page = 0) => {
             .then((response) => {
                 dispatch(getIngredientsSuccess({...response.data, name, page}))
             })
-            .catch((error) => {
-                dispatch(getIngredientsFailure(axiosErrorHandler(error)));
+            .catch((response) => {
+                const error = axiosErrorHandler(response);
+                dispatch(getIngredientsFailure(error));
             });
     };
 };

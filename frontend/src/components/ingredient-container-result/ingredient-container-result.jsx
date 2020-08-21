@@ -57,11 +57,7 @@ class IngredientContainerResult extends React.Component {
     renderError = (errorMessage) => {
         return (
             <div className={'ingredient-container-result-nocontent'}>
-                {
-                    errorMessage ?
-                        <span className={'ingredient-container-result-nocontent-error'}>{errorMessage}</span>
-                        : null
-                }
+                <span className={'ingredient-container-result-nocontent-error'}>{errorMessage}</span>
             </div>
         );
     }

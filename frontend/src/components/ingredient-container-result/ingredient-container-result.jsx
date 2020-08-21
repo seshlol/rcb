@@ -21,8 +21,10 @@ class IngredientContainerResult extends React.Component {
         const {isLoading, ingredientPages, currentPage, errorMessage} = this.props;
         const visibleIngredients = ingredientPages[currentPage];
 
-        return isLoading ? this.renderLoading()
-            : visibleIngredients ? this.renderIngredients(visibleIngredients)
+        return isLoading ?
+            this.renderLoading()
+            : visibleIngredients ?
+                this.renderIngredients(visibleIngredients)
                 : this.renderError(errorMessage);
     };
 

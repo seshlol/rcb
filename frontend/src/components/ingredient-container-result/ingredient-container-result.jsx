@@ -8,24 +8,20 @@ import './ingredient-container-result.scss';
 class IngredientContainerResult extends React.Component {
 
     render = () => {
+        const {isLoading, ingredientPages, currentPage, errorMessage} = this.props;
+        const visibleIngredients = ingredientPages[currentPage];
         return (
             <Row style={{margin: '0.5rem'}}>
                 <div className={'ingredient-container-result'}>
-                    {this.renderResult()}
+                    {
+                        isLoading ? this.renderLoading()
+                            : visibleIngredients ? this.renderIngredients(visibleIngredients)
+                                : errorMessage ? this.renderError(errorMessage)
+                                    : null
+                    }
                 </div>
             </Row>
         );
-    };
-
-    renderResult = () => {
-        const {isLoading, ingredientPages, currentPage, errorMessage} = this.props;
-        const visibleIngredients = ingredientPages[currentPage];
-
-        return isLoading ?
-            this.renderLoading()
-            : visibleIngredients ?
-                this.renderIngredients(visibleIngredients)
-                : this.renderError(errorMessage);
     };
 
     renderLoading = () => {
@@ -52,12 +48,11 @@ class IngredientContainerResult extends React.Component {
     };
 
     renderError = (errorMessage) => {
-        return errorMessage ? (
-                <div className={'ingredient-container-result-nocontent'}>
-                    <span className={'ingredient-container-result-nocontent-error'}>{errorMessage}</span>
-                </div>
-            )
-            : null;
+        return (
+            <div className={'ingredient-container-result-nocontent'}>
+                <span className={'ingredient-container-result-nocontent-error'}>{errorMessage}</span>
+            </div>
+        );
     }
 }
 

@@ -16,8 +16,8 @@ class IngredientContainerResult extends React.Component {
                     {
                         isLoading ? this.renderLoading()
                             : visibleIngredients ? this.renderIngredients(visibleIngredients)
-                                : errorMessage ? this.renderError(errorMessage)
-                                    : null
+                            : errorMessage ? this.renderError(errorMessage)
+                                : null
                     }
                 </div>
             </Row>

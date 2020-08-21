@@ -20,15 +20,10 @@ class IngredientContainerResult extends React.Component {
     renderResult = () => {
         const {isLoading, ingredientPages, currentPage, errorMessage} = this.props;
         const visibleIngredients = ingredientPages[currentPage];
-        if (isLoading) {
-            return this.renderLoading();
-        } else {
-            if (visibleIngredients) {
-                return this.renderIngredients(visibleIngredients);
-            } else {
-                return this.renderError(errorMessage);
-            }
-        }
+
+        return isLoading ? this.renderLoading()
+            : visibleIngredients ? this.renderIngredients(visibleIngredients)
+                : this.renderError(errorMessage);
     };
 
     renderLoading = () => {
@@ -55,11 +50,12 @@ class IngredientContainerResult extends React.Component {
     };
 
     renderError = (errorMessage) => {
-        return (
-            <div className={'ingredient-container-result-nocontent'}>
-                <span className={'ingredient-container-result-nocontent-error'}>{errorMessage}</span>
-            </div>
-        );
+        return errorMessage ? (
+                <div className={'ingredient-container-result-nocontent'}>
+                    <span className={'ingredient-container-result-nocontent-error'}>{errorMessage}</span>
+                </div>
+            )
+            : null;
     }
 }
 

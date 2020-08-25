@@ -8,8 +8,7 @@ import './ingredient-container-result.scss';
 class IngredientContainerResult extends React.Component {
 
     render = () => {
-        const {isLoading, ingredientPages, currentPage, errorMessage} = this.props;
-        const visibleIngredients = ingredientPages[currentPage];
+        const {isLoading, visibleIngredients, errorMessage} = this.props;
         return (
             <Row style={{margin: '0.5rem'}}>
                 <div className={'ingredient-container-result'}>
@@ -58,8 +57,7 @@ class IngredientContainerResult extends React.Component {
 const mapStateToProps = (state) => {
     return {
         isLoading: state.ingredientReducer.isLoading,
-        ingredientPages: state.ingredientReducer.ingredientPages,
-        currentPage: state.ingredientReducer.currentPage,
+        visibleIngredients: state.ingredientReducer.visibleIngredients,
         errorMessage: state.ingredientReducer.errorMessage
     };
 };

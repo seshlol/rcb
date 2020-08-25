@@ -9,6 +9,7 @@ const initialState = {
     isLoading: false,
     name: null,
     ingredientPages: [],
+    visibleIngredients: [],
     currentPage: null,
     totalPages: null,
     errorMessage: null
@@ -27,7 +28,8 @@ export default (state = initialState, {type, payload}) => {
             return {
                 isLoading: false,
                 name: payload.name,
-                ingredientPages,
+                ingredientPages: ingredientPages,
+                visibleIngredients: payload.ingredients,
                 currentPage: payload.page,
                 totalPages: payload.totalPages,
                 errorMessage: null
@@ -37,6 +39,7 @@ export default (state = initialState, {type, payload}) => {
                 isLoading: false,
                 name: null,
                 ingredientPages: [],
+                visibleIngredients: [],
                 currentPage: null,
                 totalPages: null,
                 errorMessage: payload.message
@@ -44,6 +47,7 @@ export default (state = initialState, {type, payload}) => {
         case SET_INGREDIENT_PAGE:
             return {
                 ...state,
+                visibleIngredients: state.ingredientPages[payload.page],
                 currentPage: payload.page
             };
         default:

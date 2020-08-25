@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Fragment} from 'react';
 import Row from 'react-grid-system/build/grid/Row';
 import Col from 'react-grid-system/build/grid/Col';
 import {connect} from 'react-redux';
@@ -9,21 +10,27 @@ import {getIngredients, setIngredientPage} from '../../actions/ingredient-action
 class IngredientContainerNavigation extends React.Component {
 
     render = () => {
-        const {currentPage, totalPages} = this.props;
+        const {isLoading, currentPage, totalPages} = this.props;
         return (
             <Row style={{margin: '0.5rem', height: 'calc(2rem + 2px)'}}>
-                <Col xs={2} style={{padding: 0}}>
-                    {this.renderFirstPageButton(currentPage)}
-                </Col>
-                <Col xs={2} offset={{xs: 3}} style={{padding: 0}}>
-                    {this.renderTip(currentPage, totalPages)}
-                </Col>
-                <Col xs={2} offset={{xs: 1}} style={{padding: 0, right: '1%'}}>
-                    {this.renderPreviousPageButton(currentPage)}
-                </Col>
-                <Col xs={2} style={{padding: 0}}>
-                    {this.renderNextPageButton(currentPage, totalPages)}
-                </Col>
+                {
+                    !isLoading ?
+                        <Fragment>
+                            <Col xs={2} style={{padding: 0}}>
+                                {this.renderFirstPageButton(currentPage)}
+                            </Col>
+                            <Col xs={2} offset={{xs: 3}} style={{padding: 0}}>
+                                {this.renderTip(currentPage, totalPages)}
+                            </Col>
+                            <Col xs={2} offset={{xs: 1}} style={{padding: 0, right: '1%'}}>
+                                {this.renderPreviousPageButton(currentPage)}
+                            </Col>
+                            <Col xs={2} style={{padding: 0}}>
+                                {this.renderNextPageButton(currentPage, totalPages)}
+                            </Col>
+                        </Fragment>
+                        : null
+                }
             </Row>
         );
     };
@@ -93,6 +100,7 @@ class IngredientContainerNavigation extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
+        isLoading: state.ingredientReducer.isLoading,
         name: state.ingredientReducer.name,
         ingredientPages: state.ingredientReducer.ingredientPages,
         currentPage: state.ingredientReducer.currentPage,

@@ -4,7 +4,8 @@ import {
     GET_INGREDIENTS_FAILURE,
     GET_INGREDIENTS_STARTED,
     GET_INGREDIENTS_SUCCESS,
-    SET_INGREDIENT_PAGE
+    SET_INGREDIENT_PAGE,
+    SHOW_INGREDIENT_DESCRIPTION
 } from '../constants/action-types';
 
 export const getIngredients = (name, page = 0) => {
@@ -31,6 +32,14 @@ export const setIngredientPage = (page) => {
     const payload = {page};
     return {
         type: SET_INGREDIENT_PAGE,
+        payload
+    };
+};
+
+export const showIngredientDescription = (id) => {
+    const payload = {id};
+    return {
+        type: SHOW_INGREDIENT_DESCRIPTION,
         payload
     };
 };

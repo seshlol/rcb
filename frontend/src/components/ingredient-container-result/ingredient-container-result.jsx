@@ -35,8 +35,7 @@ class IngredientContainerResult extends React.Component {
 
     renderIngredients = (visibleIngredients) => {
         const ingredients = visibleIngredients.map(ingredient => {
-            const {id, ...props} = ingredient;
-            return <Ingredient key={id} ingredient={props}/>;
+            return <Ingredient key={ingredient.id} ingredient={ingredient}/>;
         });
         return (
             <div className={'ingredient-container-result-content'}>

@@ -2,7 +2,8 @@ import {
     GET_INGREDIENTS_FAILURE,
     GET_INGREDIENTS_STARTED,
     GET_INGREDIENTS_SUCCESS,
-    SET_INGREDIENT_PAGE
+    SET_INGREDIENT_PAGE,
+    SHOW_INGREDIENT_DESCRIPTION
 } from '../constants/action-types';
 
 const initialState = {
@@ -49,6 +50,22 @@ export default (state = initialState, {type, payload}) => {
                 ...state,
                 visibleIngredients: state.ingredientPages[payload.page],
                 currentPage: payload.page
+            };
+        case SHOW_INGREDIENT_DESCRIPTION:
+            const styledIngredients = state.visibleIngredients.map(
+                (ingredient) => {
+                    const descriptionStyle = payload.id === ingredient.id ?
+                        'ingredient-container-result-item-hide'
+                        : 'ingredient-container-result-item-expand';
+                    return {
+                        ...ingredient,
+                        descriptionStyle
+                    };
+                }
+            );
+            return {
+                ...state,
+                visibleIngredients: styledIngredients
             };
         default:
             return state;

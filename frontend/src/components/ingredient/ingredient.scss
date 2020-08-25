@@ -69,9 +69,16 @@
   height: 50%;
 }
 
-.ingredient-container-result-item-info-actions-item {
+.ingredient-container-result-item-info-actions > svg {
   margin: 0.25rem 0.25rem 0.25rem 0.25rem;
   font-size: 1.5rem;
-  color: #3FBF3F;
   cursor: pointer;
+}
+
+.ingredient-container-result-item-info-actions-item-expand {
+  color: #3366ff;
+}
+
+.ingredient-container-result-item-info-actions-item-add {
+  color: #3FBF3F;
 }

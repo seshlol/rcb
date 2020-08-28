@@ -1,14 +1,26 @@
 @import '../../styles/colors';
 
-.ingredient-container-result-item {
+.ingredient-container-result-row {
+  height: calc(4rem + 2px);
+  margin: 0 0 0.25rem 0 !important;
+  transition: height 0.2s, margin 0.2s, visibility 0.08s;
+}
+
+.ingredient-container-result-row-hidden {
+  visibility: hidden;
+  height: 0;
+  margin: 0 !important;
+}
+
+.ingredient-container-result-row-item {
   display: flex;
   width: 100%;
   height: 4rem;
   border-radius: 0.25rem;
-  border: 1px solid $color-4
+  border: 1px solid $color-4;
 }
 
-.ingredient-container-result-item-logo {
+.ingredient-container-result-row-item-logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,13 +30,13 @@
   overflow: hidden;
 }
 
-.ingredient-container-result-item-logo-img {
+.ingredient-container-result-row-item-logo-img {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-.ingredient-container-result-item-logo-img:after {
+.ingredient-container-result-row-item-logo-img:after {
   position: absolute;
   top: 0;
   left: 0;
@@ -40,17 +52,17 @@
   content: attr(alt);
 }
 
-.ingredient-container-result-item-logo-alt {
+.ingredient-container-result-row-item-logo-alt {
   font-size: 3rem;
   color: $color-5;
 }
 
-.ingredient-container-result-item-info {
+.ingredient-container-result-row-item-info {
   display: block;
   width: calc(100% - 4rem - 1px);
 }
 
-.ingredient-container-result-item-info-name {
+.ingredient-container-result-row-item-info-name {
   display: flex;
   justify-content: left;
   align-items: center;
@@ -61,7 +73,7 @@
   border-bottom: 1px dotted $color-4;
 }
 
-.ingredient-container-result-item-info-actions {
+.ingredient-container-result-row-item-info-actions {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -69,16 +81,16 @@
   height: 50%;
 }
 
-.ingredient-container-result-item-info-actions > svg {
+.ingredient-container-result-row-item-info-actions > svg {
   margin: 0.25rem 0.25rem 0.25rem 0.25rem;
   font-size: 1.5rem;
   cursor: pointer;
 }
 
-.ingredient-container-result-item-info-actions-item-expand {
+.ingredient-container-result-row-item-info-actions-item-expand {
   color: #3366ff;
 }
 
-.ingredient-container-result-item-info-actions-item-add {
+.ingredient-container-result-row-item-info-actions-item-add {
   color: #3FBF3F;
 }

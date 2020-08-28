@@ -8,22 +8,24 @@ import {connect} from 'react-redux';
 class Ingredient extends React.Component {
 
     render = () => {
-        const {id, imgSrc, imgAlt, name} = this.props.ingredient;
+        const {imgSrc, imgAlt, name, styledClass} = this.props.ingredient;
+        const styled = styledClass ? `ingredient-container-result-row ${styledClass}`
+            : 'ingredient-container-result-row';
         return (
-            <Row style={{margin: '0 0 0.25rem 0'}}>
-                <div className={'ingredient-container-result-item'}>
-                    <div className={'ingredient-container-result-item-logo'}>
+            <Row className={styled}>
+                <div className={'ingredient-container-result-row-item'}>
+                    <div className={'ingredient-container-result-row-item-logo'}>
                         {this.renderImgOrIcon(imgSrc, imgAlt)}
                     </div>
-                    <div className={'ingredient-container-result-item-info'}>
-                        <div className={'ingredient-container-result-item-info-name'}>
+                    <div className={'ingredient-container-result-row-item-info'}>
+                        <div className={'ingredient-container-result-row-item-info-name'}>
                             {name}
                         </div>
-                        <div className={'ingredient-container-result-item-info-actions'}>
-                            <FontAwesomeIcon className={'ingredient-container-result-item-info-actions-item-expand'}
-                                             onClick={(id) => this.handleClickExpand(id)}
+                        <div className={'ingredient-container-result-row-item-info-actions'}>
+                            <FontAwesomeIcon className={'ingredient-container-result-row-item-info-actions-item-expand'}
+                                             onClick={this.handleClickExpand}
                                              icon={['fas', 'info-circle']}/>
-                            <FontAwesomeIcon className={'ingredient-container-result-item-info-actions-item-add'}
+                            <FontAwesomeIcon className={'ingredient-container-result-row-item-info-actions-item-add'}
                                              icon={['fas', 'plus-square']}/>
                         </div>
                     </div>
@@ -34,17 +36,18 @@ class Ingredient extends React.Component {
 
     renderImgOrIcon = (imgSrc, imgAlt) => {
         return imgSrc ? (
-                <img className={'ingredient-container-result-item-logo-img'}
+                <img className={'ingredient-container-result-row-item-logo-img'}
                      src={imgSrc}
                      alt={imgAlt}/>
             )
             : (
-                <FontAwesomeIcon className={'ingredient-container-result-item-logo-alt'}
+                <FontAwesomeIcon className={'ingredient-container-result-row-item-logo-alt'}
                                  icon={['fas', 'camera']}/>
             );
     };
 
-    handleClickExpand = (id) => {
+    handleClickExpand = () => {
+        const {id} = this.props.ingredient;
         this.props.showIngredientDescription(id);
     };
 }

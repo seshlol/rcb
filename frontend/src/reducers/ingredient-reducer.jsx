@@ -54,12 +54,10 @@ export default (state = initialState, {type, payload}) => {
         case SHOW_INGREDIENT_DESCRIPTION:
             const styledIngredients = state.visibleIngredients.map(
                 (ingredient) => {
-                    const styledClass = payload.id === ingredient.id ?
-                        'ingredient-container-result-row-expanded'
-                        : 'ingredient-container-result-row-hidden';
+                    const isExpanded = payload.id === ingredient.id;
                     return {
                         ...ingredient,
-                        styledClass
+                        isExpanded
                     };
                 }
             );

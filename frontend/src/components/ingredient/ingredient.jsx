@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Fragment} from 'react';
 import Row from 'react-grid-system/build/grid/Row';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import './ingredient.scss';
@@ -8,29 +9,35 @@ import {connect} from 'react-redux';
 class Ingredient extends React.Component {
 
     render = () => {
-        const {imgSrc, imgAlt, name, styledClass} = this.props.ingredient;
-        const styled = styledClass ? `ingredient-container-result-row ${styledClass}`
+        const {imgSrc, imgAlt, name, isExpanded} = this.props.ingredient;
+        const styledClass = isExpanded === false ?
+            'ingredient-container-result-row ingredient-container-result-row-hidden'
             : 'ingredient-container-result-row';
         return (
-            <Row className={styled}>
-                <div className={'ingredient-container-result-row-item'}>
-                    <div className={'ingredient-container-result-row-item-logo'}>
-                        {this.renderImgOrIcon(imgSrc, imgAlt)}
-                    </div>
-                    <div className={'ingredient-container-result-row-item-info'}>
-                        <div className={'ingredient-container-result-row-item-info-name'}>
-                            {name}
+            <Fragment>
+                <Row className={styledClass}>
+                    <div className={'ingredient-container-result-row-item'}>
+                        <div className={'ingredient-container-result-row-item-logo'}>
+                            {this.renderImgOrIcon(imgSrc, imgAlt)}
                         </div>
-                        <div className={'ingredient-container-result-row-item-info-actions'}>
-                            <FontAwesomeIcon className={'ingredient-container-result-row-item-info-actions-item-expand'}
-                                             onClick={this.handleClickExpand}
-                                             icon={['fas', 'info-circle']}/>
-                            <FontAwesomeIcon className={'ingredient-container-result-row-item-info-actions-item-add'}
-                                             icon={['fas', 'plus-square']}/>
+                        <div className={'ingredient-container-result-row-item-info'}>
+                            <div className={'ingredient-container-result-row-item-info-name'}>
+                                {name}
+                            </div>
+                            <div className={'ingredient-container-result-row-item-info-actions'}>
+                                <FontAwesomeIcon
+                                    className={'ingredient-container-result-row-item-info-actions-item-expand'}
+                                    onClick={this.handleClickExpand}
+                                    icon={['fas', 'info-circle']}/>
+                                <FontAwesomeIcon
+                                    className={'ingredient-container-result-row-item-info-actions-item-add'}
+                                    icon={['fas', 'plus-square']}/>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </Row>
+                </Row>
+                {isExpanded ? <div>description</div> : null}
+            </Fragment>
         );
     };
 

@@ -4,7 +4,6 @@ import {
     faAngleLeft,
     faAngleRight,
     faCamera,
-    faInfoCircle,
     faPlusSquare,
     faSearch,
     faSpinner
@@ -15,7 +14,6 @@ library.add(
     faAngleLeft,
     faAngleRight,
     faCamera,
-    faInfoCircle,
     faPlusSquare,
     faSearch,
     faSpinner

@@ -9,14 +9,15 @@ import {connect} from 'react-redux';
 class Ingredient extends React.Component {
 
     render = () => {
-        const {imgSrc, imgAlt, name, isExpanded} = this.props.ingredient;
+        const {imgSrc, imgAlt, name, description, isExpanded} = this.props.ingredient;
         const styledClass = isExpanded === false ?
             'ingredient-container-result-row ingredient-container-result-row-hidden'
             : 'ingredient-container-result-row';
         return (
             <Fragment>
                 <Row className={styledClass}>
-                    <div className={'ingredient-container-result-row-item'}>
+                    <div className={'ingredient-container-result-row-item'}
+                         onClick={this.handleClickExpand}>
                         <div className={'ingredient-container-result-row-item-logo'}>
                             {this.renderImgOrIcon(imgSrc, imgAlt)}
                         </div>
@@ -26,17 +27,19 @@ class Ingredient extends React.Component {
                             </div>
                             <div className={'ingredient-container-result-row-item-info-actions'}>
                                 <FontAwesomeIcon
-                                    className={'ingredient-container-result-row-item-info-actions-item-expand'}
-                                    onClick={this.handleClickExpand}
-                                    icon={['fas', 'info-circle']}/>
-                                <FontAwesomeIcon
                                     className={'ingredient-container-result-row-item-info-actions-item-add'}
                                     icon={['fas', 'plus-square']}/>
                             </div>
                         </div>
                     </div>
                 </Row>
-                {isExpanded ? <div>description</div> : null}
+                {isExpanded ?
+                    <Row style={{margin: 0}}>
+                        <div className={'ingredient-container-result-row-description'}>
+                            {description}
+                        </div>
+                    </Row>
+                    : null}
             </Fragment>
         );
     };

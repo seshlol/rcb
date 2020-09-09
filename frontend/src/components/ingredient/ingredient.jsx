@@ -10,32 +10,33 @@ class Ingredient extends React.Component {
 
     render = () => {
         const {imgSrc, imgAlt, name, description, isExpanded} = this.props.ingredient;
+        const rowStyle = 'ingredient-container-result-row1';
         const styledClass = isExpanded === false ?
-            'ingredient-container-result-row ingredient-container-result-row-hidden'
-            : 'ingredient-container-result-row';
+            `${rowStyle} ${rowStyle}-hidden`
+            : rowStyle;
         return (
             <Fragment>
                 <Row className={styledClass}>
-                    <div className={'ingredient-container-result-row-item'}
+                    <div className={'ingredient-container-result-row1-item'}
                          onClick={this.handleClickExpand}>
-                        <div className={'ingredient-container-result-row-item-logo'}>
+                        <div className={'ingredient-container-result-row1-item-logo'}>
                             {this.renderImgOrIcon(imgSrc, imgAlt)}
                         </div>
-                        <div className={'ingredient-container-result-row-item-info'}>
-                            <div className={'ingredient-container-result-row-item-info-name'}>
+                        <div className={'ingredient-container-result-row1-item-info'}>
+                            <div className={'ingredient-container-result-row1-item-info-name'}>
                                 {name}
                             </div>
-                            <div className={'ingredient-container-result-row-item-info-actions'}>
+                            <div className={'ingredient-container-result-row1-item-info-actions'}>
                                 <FontAwesomeIcon
-                                    className={'ingredient-container-result-row-item-info-actions-item-add'}
+                                    className={'ingredient-container-result-row1-item-info-actions-item-add'}
                                     icon={['fas', 'plus-square']}/>
                             </div>
                         </div>
                     </div>
                 </Row>
                 {isExpanded ?
-                    <Row style={{margin: 0}}>
-                        <div className={'ingredient-container-result-row-description'}>
+                    <Row className={'ingredient-container-result-row2-hidden ingredient-container-result-row2'}>
+                        <div className={'ingredient-container-result-row2-description'}>
                             {description}
                         </div>
                     </Row>
@@ -46,12 +47,12 @@ class Ingredient extends React.Component {
 
     renderImgOrIcon = (imgSrc, imgAlt) => {
         return imgSrc ? (
-                <img className={'ingredient-container-result-row-item-logo-img'}
+                <img className={'ingredient-container-result-row1-item-logo-img'}
                      src={imgSrc}
                      alt={imgAlt}/>
             )
             : (
-                <FontAwesomeIcon className={'ingredient-container-result-row-item-logo-alt'}
+                <FontAwesomeIcon className={'ingredient-container-result-row1-item-logo-alt'}
                                  icon={['fas', 'camera']}/>
             );
     };

@@ -1,18 +1,18 @@
 @import '../../styles/colors';
 
-.ingredient-container-result-row {
+.ingredient-container-result-row1 {
   height: calc(4rem + 2px);
   margin: 0 0 0.25rem 0 !important;
   transition: height 0.2s, margin 0.2s, visibility 0.08s;
 }
 
-.ingredient-container-result-row-hidden {
+.ingredient-container-result-row1-hidden {
   visibility: hidden;
   height: 0;
   margin: 0 !important;
 }
 
-.ingredient-container-result-row-item {
+.ingredient-container-result-row1-item {
   display: flex;
   width: 100%;
   height: 4rem;
@@ -21,7 +21,7 @@
   cursor: pointer;
 }
 
-.ingredient-container-result-row-item-logo {
+.ingredient-container-result-row1-item-logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,13 +31,13 @@
   overflow: hidden;
 }
 
-.ingredient-container-result-row-item-logo-img {
+.ingredient-container-result-row1-item-logo-img {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-.ingredient-container-result-row-item-logo-img:after {
+.ingredient-container-result-row1-item-logo-img:after {
   position: absolute;
   top: 0;
   left: 0;
@@ -53,17 +53,17 @@
   content: attr(alt);
 }
 
-.ingredient-container-result-row-item-logo-alt {
+.ingredient-container-result-row1-item-logo-alt {
   font-size: 3rem;
   color: $color-5;
 }
 
-.ingredient-container-result-row-item-info {
+.ingredient-container-result-row1-item-info {
   display: block;
   width: calc(100% - 4rem - 1px);
 }
 
-.ingredient-container-result-row-item-info-name {
+.ingredient-container-result-row1-item-info-name {
   display: flex;
   justify-content: left;
   align-items: center;
@@ -74,7 +74,7 @@
   border-bottom: 1px dotted $color-4;
 }
 
-.ingredient-container-result-row-item-info-actions {
+.ingredient-container-result-row1-item-info-actions {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -82,25 +82,40 @@
   height: 50%;
 }
 
-.ingredient-container-result-row-item-info-actions > svg {
+.ingredient-container-result-row1-item-info-actions > svg {
   margin: 0.25rem 0.25rem 0.25rem 0.25rem;
   font-size: 1.5rem;
   cursor: pointer;
 }
 
-.ingredient-container-result-row-item-info-actions-item-expand {
+.ingredient-container-result-row1-item-info-actions-item-expand {
   color: #3366ff;
 }
 
-.ingredient-container-result-row-item-info-actions-item-add {
+.ingredient-container-result-row1-item-info-actions-item-add {
   color: #3FBF3F;
 }
 
-.ingredient-container-result-row-description {
+//todo
+.ingredient-container-result-row2-hidden {
+  height: 0;
+  margin: 0 !important;
+  visibility: hidden;
+  transition: height 0.2s, margin 0.2s, visibility 0.08s;
+}
+
+.ingredient-container-result-row2 {
+  height: calc(100% - 4rem - 2px - 0.25rem - 1rem - 2px);
+  visibility: visible;
+}
+//
+
+.ingredient-container-result-row2-description {
   width: 100%;
-  height: calc(100% - 4rem - 0.25rem);
-  padding: 1rem;
+  height: 100%;
+  padding: 0.5rem;
+  overflow: hidden;
   border-radius: 0.25rem;
   border: 1px solid $color-4;
-  transition: height 0.2s, margin 0.2s, visibility 0.08s;
+  font-size: 0.75rem;
 }

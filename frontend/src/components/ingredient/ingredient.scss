@@ -3,7 +3,9 @@
 .ingredient-container-result-row1 {
   height: calc(4rem + 2px);
   margin: 0 0 0.25rem 0 !important;
-  transition: height 0.2s, margin 0.2s, visibility 0.08s;
+  transition-property: height, margin, visibility;
+  transition-duration: 0.2s, 0.2s, 0s;
+  transition-delay: 0s, 0s, 0.08s;
 }
 
 .ingredient-container-result-row1-hidden {
@@ -96,19 +98,19 @@
   color: #3FBF3F;
 }
 
-//todo
 .ingredient-container-result-row2-hidden {
   height: 0;
   margin: 0 !important;
   visibility: hidden;
-  transition: height 0.2s, margin 0.2s, visibility 0.08s;
+  transition-property: height, visibility;
+  transition-duration: 0.2s, 0s;
+  transition-delay: 0.08s, 0.08s;
 }
 
 .ingredient-container-result-row2 {
   height: calc(100% - 4rem - 2px - 0.25rem - 1rem - 2px);
   visibility: visible;
 }
-//
 
 .ingredient-container-result-row2-description {
   width: 100%;

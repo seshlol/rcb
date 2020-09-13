@@ -10,13 +10,13 @@ class Ingredient extends React.Component {
 
     render = () => {
         const {imgSrc, imgAlt, name, description, isExpanded} = this.props.ingredient;
-        const rowStyle = 'ingredient-container-result-row1';
-        const styledClass = isExpanded === false ?
-            `${rowStyle} ${rowStyle}-hidden`
-            : rowStyle;
+        const row1Style = 'ingredient-container-result-row1';
+        const styledRow1Class = isExpanded === false ? `${row1Style} ${row1Style}-hidden` : row1Style;
+        const row2Style = 'ingredient-container-result-row2';
+        const styledRow2Class = isExpanded ? `${row2Style} ${row2Style}-hidden` : `${row2Style}-hidden`;
         return (
             <Fragment>
-                <Row className={styledClass}>
+                <Row className={styledRow1Class}>
                     <div className={'ingredient-container-result-row1-item'}
                          onClick={this.handleClickExpand}>
                         <div className={'ingredient-container-result-row1-item-logo'}>
@@ -34,13 +34,11 @@ class Ingredient extends React.Component {
                         </div>
                     </div>
                 </Row>
-                {isExpanded ?
-                    <Row className={'ingredient-container-result-row2-hidden ingredient-container-result-row2'}>
-                        <div className={'ingredient-container-result-row2-description'}>
-                            {description}
-                        </div>
-                    </Row>
-                    : null}
+                <Row className={styledRow2Class}>
+                    <div className={'ingredient-container-result-row2-description'}>
+                        {description}
+                    </div>
+                </Row>
             </Fragment>
         );
     };

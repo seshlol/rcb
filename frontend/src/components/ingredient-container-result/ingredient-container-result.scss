@@ -5,6 +5,7 @@
   width: 100%;
   height: calc((4rem + 2px) * 6 + 0.25rem * 5);
   justify-content: center;
+  overflow: hidden;
   align-items: center;
   border-radius: 0.25rem;
   background-color: $color-1;

@@ -54,7 +54,8 @@ export default (state = initialState, {type, payload}) => {
         case SHOW_INGREDIENT_DESCRIPTION:
             const styledIngredients = state.visibleIngredients.map(
                 (ingredient) => {
-                    const isExpanded = payload.id === ingredient.id;
+                    const isExpanded = ingredient.isExpanded === undefined ?
+                        payload.id === ingredient.id : undefined;
                     return {
                         ...ingredient,
                         isExpanded

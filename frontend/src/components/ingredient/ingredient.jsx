@@ -9,7 +9,7 @@ import {connect} from 'react-redux';
 class Ingredient extends React.Component {
 
     render = () => {
-        const {imgSrc, imgAlt, name, description, isExpanded} = this.props.ingredient;
+        const {imgSrc, imgAlt, name, description, isExpanded, zIndex} = this.props.ingredient;
         const row1Style = 'ingredient-container-result-row1';
         const styledRow1Class = isExpanded === false ? `${row1Style} ${row1Style}-hidden` : row1Style;
         const row2Style = 'ingredient-container-result-row2';
@@ -18,6 +18,7 @@ class Ingredient extends React.Component {
             <Fragment>
                 <Row className={styledRow1Class}>
                     <div className={'ingredient-container-result-row1-item'}
+                         style={{zIndex: zIndex}}
                          onClick={this.handleClickExpand}>
                         <div className={'ingredient-container-result-row1-item-logo'}>
                             {this.renderImgOrIcon(imgSrc, imgAlt)}

@@ -1,5 +1,5 @@
 import axios from '../api/axios';
-import axiosErrorHandler from '../api/axios-error-handler';
+import axiosHandleError from '../api/axios-error-handler';
 import {
     GET_INGREDIENTS_FAILURE,
     GET_INGREDIENTS_STARTED,
@@ -22,25 +22,9 @@ export const getIngredients = (name, page = 0) => {
                 dispatch(getIngredientsSuccess({...response.data, name, page}))
             })
             .catch((response) => {
-                const error = axiosErrorHandler(response);
+                const error = axiosHandleError(response);
                 dispatch(getIngredientsFailure(error));
             });
-    };
-};
-
-export const setIngredientPage = (page) => {
-    const payload = {page};
-    return {
-        type: SET_INGREDIENT_PAGE,
-        payload
-    };
-};
-
-export const showIngredientDescription = (id) => {
-    const payload = {id};
-    return {
-        type: SHOW_INGREDIENT_DESCRIPTION,
-        payload
     };
 };
 
@@ -64,3 +48,18 @@ const getIngredientsFailure = (payload) => {
     };
 };
 
+export const setIngredientPage = (page) => {
+    const payload = {page};
+    return {
+        type: SET_INGREDIENT_PAGE,
+        payload
+    };
+};
+
+export const showIngredientDescription = (id) => {
+    const payload = {id};
+    return {
+        type: SHOW_INGREDIENT_DESCRIPTION,
+        payload
+    };
+};

@@ -1,6 +1,6 @@
 @import '../../styles/colors';
 
-.ingredient-container-result-row1 {
+.ingredient-container-result-primary {
   height: calc(4rem + 2px);
   margin: 0 0 0.25rem 0 !important;
   transition-property: height, margin, visibility;
@@ -9,7 +9,7 @@
   transition-delay: 0s, 0s, 0s;
 }
 
-.ingredient-container-result-row1-hidden {
+.ingredient-container-result-primary-hidden {
   visibility: hidden;
   height: 0;
   margin: 0 !important;
@@ -17,7 +17,7 @@
   transition-delay: 0s, 0s, 0.25s;
 }
 
-.ingredient-container-result-row1-item {
+.ingredient-container-result-primary-item {
   display: flex;
   width: 100%;
   height: 4rem;
@@ -27,7 +27,7 @@
   cursor: pointer;
 }
 
-.ingredient-container-result-row1-item-logo {
+.ingredient-container-result-primary-item-logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,13 +37,13 @@
   overflow: hidden;
 }
 
-.ingredient-container-result-row1-item-logo-img {
+.ingredient-container-result-primary-item-logo-img {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-.ingredient-container-result-row1-item-logo-img:after {
+.ingredient-container-result-primary-item-logo-img:after {
   position: absolute;
   top: 0;
   left: 0;
@@ -59,17 +59,17 @@
   content: attr(alt);
 }
 
-.ingredient-container-result-row1-item-logo-alt {
+.ingredient-container-result-primary-item-logo-alt {
   font-size: 3rem;
   color: $color-5;
 }
 
-.ingredient-container-result-row1-item-info {
+.ingredient-container-result-primary-item-info {
   display: block;
   width: calc(100% - 4rem - 1px);
 }
 
-.ingredient-container-result-row1-item-info-name {
+.ingredient-container-result-primary-item-info-name {
   display: flex;
   justify-content: left;
   align-items: center;
@@ -80,7 +80,7 @@
   border-bottom: 1px dotted $color-4;
 }
 
-.ingredient-container-result-row1-item-info-actions {
+.ingredient-container-result-primary-item-info-actions {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -88,21 +88,21 @@
   height: 50%;
 }
 
-.ingredient-container-result-row1-item-info-actions > svg {
+.ingredient-container-result-primary-item-info-actions > svg {
   margin: 0.25rem 0.25rem 0.25rem 0.25rem;
   font-size: 1.5rem;
   cursor: pointer;
 }
 
-.ingredient-container-result-row1-item-info-actions-item-expand {
+.ingredient-container-result-primary-item-info-actions-item-expand {
   color: #3366ff;
 }
 
-.ingredient-container-result-row1-item-info-actions-item-add {
+.ingredient-container-result-primary-item-info-actions-item-add {
   color: #3FBF3F;
 }
 
-.ingredient-container-result-row2-hidden {
+.ingredient-container-result-description-hidden {
   height: 0;
   margin: 0 !important;
   visibility: hidden;
@@ -112,14 +112,14 @@
   transition-delay: 0s, 0.25s;
 }
 
-.ingredient-container-result-row2 {
+.ingredient-container-result-description {
   height: calc(100% - 4rem - 2px - 0.25rem - 1rem - 2px);
   visibility: visible;
   transition-duration: 0.25s, 0s;
   transition-delay: 0s, 0s;
 }
 
-.ingredient-container-result-row2-description {
+.ingredient-container-result-description-item {
   width: 100%;
   height: 100%;
   padding: 0.5rem;

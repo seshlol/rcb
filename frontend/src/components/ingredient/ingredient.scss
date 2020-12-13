@@ -5,7 +5,7 @@
   margin: 0 0 0.25rem 0 !important;
   transition-property: height, margin, visibility;
   transition-timing-function: linear;
-  transition-duration: 0.6s, 0.6s, 0s;
+  transition-duration: 0.25s, 0.25s, 0s;
   transition-delay: 0s, 0s, 0s;
 }
 
@@ -13,8 +13,8 @@
   visibility: hidden;
   height: 0;
   margin: 0 !important;
-  transition-duration: 0.6s, 0.6s, 0s;
-  transition-delay: 0s, 0s, 0.6s;
+  transition-duration: 0.25s, 0.25s, 0s;
+  transition-delay: 0s, 0s, 0.25s;
 }
 
 .ingredient-container-result-row1-item {

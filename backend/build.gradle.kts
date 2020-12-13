@@ -38,7 +38,7 @@ allOpen {
 }
 
 tasks.withType<KotlinCompile> {
-    dependsOn(":frontend:copyFrontend")
+//    dependsOn(":frontend:copyFrontend")
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
         jvmTarget = "1.8"

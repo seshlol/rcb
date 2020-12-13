@@ -26,6 +26,11 @@ tasks {
         dependsOn("copyHtml")
         dependsOn("copyJs")
     }
+
+    task<YarnTask>("start") {
+        dependsOn("yarn_install")
+        args = listOf("run", "start")
+    }
 }
 
 

@@ -12,16 +12,24 @@ class IngredientContainerResult extends React.Component {
         return (
             <Row style={{margin: '0.5rem'}}>
                 <div className={'ingredient-container-result'}>
-                    {
-                        isLoading ? this.renderLoading()
-                            : visibleIngredients.length > 0 ? this.renderIngredients(visibleIngredients)
-                            : errorMessage ? this.renderError(errorMessage)
-                                : null
-                    }
+                    {this.defineContent(isLoading, visibleIngredients, errorMessage)}
                 </div>
             </Row>
         );
     };
+
+    defineContent = (isLoading, visibleIngredients, errorMessage) => {
+        if (isLoading) {
+            return this.renderLoading();
+        }
+        if (visibleIngredients.length > 0) {
+            return this.renderIngredients(visibleIngredients);
+        }
+        if (errorMessage) {
+            return this.renderError(errorMessage)
+        }
+        return null;
+    }
 
     renderLoading = () => {
         return (

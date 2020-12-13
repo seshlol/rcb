@@ -2,9 +2,9 @@ import * as React from 'react';
 import {Fragment} from 'react';
 import Row from 'react-grid-system/build/grid/Row';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import './ingredient.scss';
 import {showIngredientDescription} from '../../actions/ingredient-actions';
 import {connect} from 'react-redux';
+import './ingredient.scss';
 
 class Ingredient extends React.Component {
 

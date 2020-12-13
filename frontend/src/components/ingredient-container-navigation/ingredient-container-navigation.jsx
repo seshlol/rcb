@@ -4,8 +4,8 @@ import Row from 'react-grid-system/build/grid/Row';
 import Col from 'react-grid-system/build/grid/Col';
 import {connect} from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import './ingredient-container-navigation.scss';
 import {getIngredients, setIngredientPage} from '../../actions/ingredient-actions';
+import './ingredient-container-navigation.scss';
 
 class IngredientContainerNavigation extends React.Component {
 

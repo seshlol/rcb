@@ -29,7 +29,7 @@ class IngredientContainerNavigation extends React.Component {
                                 {this.renderNextPageButton(currentPage, totalPages)}
                             </Col>
                         </Fragment>
-                        : null
+                        : <Fragment/>
                 }
             </Row>
         );

@@ -10,13 +10,15 @@ class Ingredient extends React.Component {
 
     render = () => {
         const {imgSrc, imgAlt, name, description, isExpanded, zIndex} = this.props.ingredient;
-        const row1Style = 'ingredient-container-result-primary';
-        const styledRow1Class = isExpanded === false ? `${row1Style} ${row1Style}-hidden` : row1Style;
-        const row2Style = 'ingredient-container-result-description';
-        const styledRow2Class = isExpanded ? `${row2Style} ${row2Style}-hidden` : `${row2Style}-hidden`;
+        const primaryStyle = 'ingredient-container-result-primary';
+        const primaryStyleClass = isExpanded === false ? `${primaryStyle} ${primaryStyle}-hidden`
+            : primaryStyle;
+        const descriptionStyle = 'ingredient-container-result-description';
+        const descriptionStyleClass = isExpanded ? `${descriptionStyle} ${descriptionStyle}-hidden`
+            : `${descriptionStyle}-hidden`;
         return (
             <Fragment>
-                <Row className={styledRow1Class}>
+                <Row className={primaryStyleClass}>
                     <div className={'ingredient-container-result-primary-item'}
                          style={{zIndex: zIndex}}
                          onClick={this.handleClickExpand}>
@@ -35,7 +37,7 @@ class Ingredient extends React.Component {
                         </div>
                     </div>
                 </Row>
-                <Row className={styledRow2Class}>
+                <Row className={descriptionStyleClass}>
                     <div className={'ingredient-container-result-description-item'}>
                         {description}
                     </div>
